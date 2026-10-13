@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://plussmile0215eye-boop.github.io/Google-/sitemap.xml
