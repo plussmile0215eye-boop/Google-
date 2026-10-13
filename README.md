@@ -4,7 +4,8 @@
 
 - `index.html` … サイト本体（店舗情報の構造化データ・よくある質問入り）
 - `llms.txt` … AI向けの店舗情報まとめ
-- `robots.txt` … 検索エンジン・AIのクロールを許可
+- `robots.txt` / `sitemap.xml` … 検索エンジン・AIのクロール用
+
+公開URL（GitHub Pages を有効にした後）: https://plussmile0215eye-boop.github.io/Google-/
 - `Googleビジネスプロフィール改善案.md` … Googleマップのプロフィールに貼る文案
 
-`【 】` の部分は実際の情報に差し替えてください。
