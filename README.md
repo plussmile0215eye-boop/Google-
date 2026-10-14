@@ -9,3 +9,4 @@
 公開URL（GitHub Pages を有効にした後）: https://plussmile0215eye-boop.github.io/Google-/
 - `Googleビジネスプロフィール改善案.md` … Googleマップのプロフィールに貼る文案
 - `Instagramプロフィール改善案.md` … Instagramのプロフィール文案と、Instagramへ誘導する動線のまとめ
+- `LINEフォローメッセージ.md` … 初回のお客さまを2回目来店につなげるLINEメッセージ文面と配信スケジュール
