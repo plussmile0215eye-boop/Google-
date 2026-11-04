@@ -54,19 +54,24 @@ body{font-variant-numeric:lining-nums;font-family:'Zen Maru Gothic',sans-serif;c
 .ans .a1:before,.ans .a1:after{content:"";width:14mm;height:.35mm;background:%(a)s;opacity:.5}
 .ans .a2{font-size:22pt;font-weight:900;color:%(a)s;line-height:1.3;margin-top:1mm}
 .ans .a2 b{background:linear-gradient(transparent 62%%,%(hl)s 62%%);padding:0 1mm}
-.name{text-align:center;margin-top:2mm;position:relative;z-index:1}
+.name{text-align:center;margin-top:0;position:relative;z-index:1}
 .name .tag{display:inline-block;font-size:10pt;font-weight:700;color:%(sub)s;border:.35mm solid %(bsoft)s;border-radius:10mm;padding:.6mm 4mm;background:rgba(255,255,255,.6)}
 .name .ename{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14pt;color:%(b2)s;margin-top:.5mm;letter-spacing:.06em}
 .name h1{font-size:36pt;font-weight:900;color:%(b)s;letter-spacing:.08em;line-height:1.05}
 .name p{font-size:12.5pt;font-weight:700;margin-top:1.5mm}
 .name p b{background:linear-gradient(transparent 60%%,%(hl)s 60%%)}
-.why{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm;margin-top:4mm;position:relative;z-index:1}
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:3mm;margin-top:3mm;position:relative;z-index:1}
 .w{background:rgba(255,255,255,.78);border-radius:5mm;padding:2.5mm 2mm 2.5mm;text-align:center;box-shadow:0 .8mm 2.5mm rgba(120,90,90,.07)}
-.w .t{font-size:9.5pt;font-weight:900;color:%(b2)s}
+.w .t{font-size:9pt;font-weight:900;color:%(b2)s}
 .w .b{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:30pt;color:%(a)s;line-height:1}
 .w .b small{font-family:'Zen Maru Gothic',sans-serif;font-size:13pt;font-weight:900}
-.w .s{font-size:8.5pt;font-weight:700;color:%(sub)s;margin-top:1mm;line-height:1.35}
-.free{margin-top:3.5mm;text-align:center;position:relative;z-index:1}
+.w .s{font-size:8pt;font-weight:700;color:%(sub)s;margin-top:1mm;line-height:1.35}
+.prod{display:flex;gap:6mm;align-items:center;margin-top:2mm;padding:0 2mm;position:relative;z-index:1}
+.pr{flex:1;min-width:0}
+.srv{width:30mm;flex:none;position:relative;text-align:center}
+.srv img{width:100%%;display:block;filter:drop-shadow(0 1.5mm 2mm rgba(90,70,70,.18))}
+.srv span{position:absolute;left:50%%;bottom:-1mm;transform:translateX(-50%%);white-space:nowrap;font-size:9pt;font-weight:900;color:#fff;background:%(agrad)s;border-radius:10mm;padding:.6mm 3mm}
+.free{margin-top:2.5mm;text-align:center;position:relative;z-index:1}
 .free small{display:block;font-size:11.5pt;font-weight:900;color:%(a2)s}
 .free strong{display:inline-block;font-size:23pt;font-weight:900;color:#fff;background:%(agrad)s;padding:1.3mm 12mm 1.8mm;border-radius:20mm;margin-top:1mm;letter-spacing:.06em;box-shadow:0 1.2mm 3mm rgba(201,120,130,.22)}
 .hot{margin-top:2mm;font-size:13pt;font-weight:900}
@@ -98,12 +103,12 @@ BODY = """<div class="page">%(decor)s
  <div class="ph"><div class="arch2"></div><div class="arch"></div><img src="img/up.png"></div>
 </div>
 <div class="ans"><div class="a1">だからこそ、このお水</div><div class="a2"><b>めっちゃおいしい</b>から<br>ついゴクゴク飲んじゃう！</div></div>
-<div class="name"><span class="tag">水質にこだわったウォーターサーバー</span><div class="ename">Aquadore</div><h1>アクアドーレ</h1><p>タンクに<b>水道水を注ぐだけ</b>。重いボトルの注文も交換もナシ</p></div>
+<div class="prod"><div class="srv"><img src="img/server.png"><span>選べる2タイプ</span></div><div class="pr"><div class="name"><span class="tag">水質にこだわったウォーターサーバー</span><div class="ename">Aquadore</div><h1>アクアドーレ</h1><p>タンクに<b>水道水を注ぐだけ</b>。重いボトルの注文も交換もナシ</p></div>
 <div class="why">
  <div class="w"><div class="t">塩素・細菌の除去率</div><div class="b">99.9<small>%%</small></div><div class="s">PFAS・トリハロメタン<br>なども除去</div></div>
  <div class="w"><div class="t">浄水パワー</div><div class="b">2.5<small>台分</small></div><div class="s">一般的なサーバーと<br>比べて</div></div>
  <div class="w"><div class="t">好みで選べる水質</div><div class="b">4<small>種類</small></div><div class="s">水素×シリカ・水素<br>シリカ・バナジウム</div></div>
-</div>
+</div></div></div>
 <div class="free"><small>1日27Lまで、飲んでも使ってもOK</small><strong>使い放題・飲み放題</strong>
  <div class="hot"><span>♨</span> お湯も出るから、<b>白湯</b>もすぐ飲める！</div>
  <div class="u">白湯に ／ 飲み水に ／ ご飯・お料理に ／ スキンケアに</div></div>
@@ -115,7 +120,7 @@ BODY = """<div class="page">%(decor)s
  <div class="qr"><div class="h">今日から<br>おいしい水生活！</div><div class="c">%(qr)s</div><div class="f">読み取ってお申し込み</div></div>
 </div>
 <div class="staff">気になったら、スタッフに気軽に声をかけてね</div>
-<div class="note">※1日あたりの金額は税抜月額を30日で割った目安です。除去率・浄水能力はメーカー公表値です。</div>
+<div class="note">※別途、登録事務手数料3,300円がかかります。1日あたりの金額は税抜月額を30日で割った目安です。除去率・浄水能力はメーカー公表値です。</div>
 </div>"""
 
 for name, t in THEMES.items():
@@ -123,7 +128,7 @@ for name, t in THEMES.items():
     d = [SPARK.format(x=x, y=y, w=w, c=c) for x, y, w, c in
          [(120, 16, 5, t["hl"]), (113, 27, 3, t["bsoft"]), (8, 118, 3.5, t["line"]), (188, 128, 4, t["hl"])]]
     if t["snow"]:
-        d += [SNOW.format(x=x, y=y, w=w, c=t["b2"]) for x, y, w in [(104, 12, 6), (12, 104, 5), (182, 112, 5.5), (190, 205, 4.5)]]
+        d += [SNOW.format(x=x, y=y, w=w, c=t["b2"]) for x, y, w in [(104, 12, 6), (182, 112, 5.5), (190, 205, 4.5)]]
     html = ('<!doctype html><html lang="ja"><head><meta charset="utf-8">'
             '<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900'
             '&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet">'
