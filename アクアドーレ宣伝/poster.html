@@ -49,6 +49,12 @@ body{font-variant-numeric:lining-nums;font-family:'Zen Maru Gothic',sans-serif;c
 .u{font-size:10pt;font-weight:700;color:#8c7774;margin-top:1mm}
 .bottom{margin-top:auto;padding-top:3mm;display:flex;gap:4mm;position:relative;z-index:1}
 .price{flex:1;background:rgba(255,255,255,.9);border-radius:5mm;padding:3mm 5mm;text-align:center;box-shadow:0 .8mm 2.5mm rgba(120,90,90,.08);display:flex;flex-direction:column;justify-content:center}
+.say{position:absolute;z-index:3;right:calc(100% - 6mm);top:-1mm;white-space:nowrap;background:#fff;border:.45mm solid #e3828f;border-radius:4mm;padding:1.8mm 3.2mm;font-size:9.5pt;font-weight:900;color:#8c7774;line-height:1.35;text-align:center;box-shadow:0 .8mm 2mm rgba(120,90,90,.1)}
+.say b{color:#e3828f;font-size:11.5pt}
+.say:after{content:"";position:absolute;right:-2.2mm;top:62%;width:3.4mm;height:3.4mm;background:#fff;border-right:.45mm solid #e3828f;border-top:.45mm solid #e3828f;transform:rotate(45deg) skew(8deg,8deg)}
+.badges{display:flex;gap:2mm;justify-content:center;margin-bottom:2.5mm}
+.badges span{font-size:9.5pt;font-weight:900;color:#4f9fd1;border:.4mm solid #bfdff3;background:#fff;border-radius:10mm;padding:.6mm 3mm}
+.badges span:before{content:"✓ ";color:#e3828f}
 .price .l{font-size:11pt;font-weight:900;color:#cf7d8a;letter-spacing:.1em}
 .price .mo{margin-top:1mm;font-weight:900;font-size:13pt;line-height:1}
 .price .mo b{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:42pt;color:#e3828f;letter-spacing:.01em}
@@ -63,11 +69,11 @@ body{font-variant-numeric:lining-nums;font-family:'Zen Maru Gothic',sans-serif;c
 .qr .f{font-size:9.5pt;font-weight:900;margin-top:1.8mm}
 .staff{text-align:center;font-size:11.5pt;font-weight:900;color:#cf7d8a;margin-top:2mm;position:relative;z-index:1}
 .note{font-size:7pt;color:#8c7774;text-align:center;margin-top:1mm;font-weight:500;position:relative;z-index:1}
-</style></head><body><div class="page"><svg class="dec" style="left:120mm;top:16mm;width:5mm" viewBox="0 0 20 20"><path d="M10 0C11 7 13 9 20 10 13 11 11 13 10 20 9 13 7 11 0 10 7 9 9 7 10 0z" fill="#fde3a7"/></svg><svg class="dec" style="left:113mm;top:27mm;width:3mm" viewBox="0 0 20 20"><path d="M10 0C11 7 13 9 20 10 13 11 11 13 10 20 9 13 7 11 0 10 7 9 9 7 10 0z" fill="#bfdff3"/></svg><svg class="dec" style="left:8mm;top:118mm;width:3.5mm" viewBox="0 0 20 20"><path d="M10 0C11 7 13 9 20 10 13 11 11 13 10 20 9 13 7 11 0 10 7 9 9 7 10 0z" fill="#f1c6cb"/></svg><svg class="dec" style="left:188mm;top:128mm;width:4mm" viewBox="0 0 20 20"><path d="M10 0C11 7 13 9 20 10 13 11 11 13 10 20 9 13 7 11 0 10 7 9 9 7 10 0z" fill="#fde3a7"/></svg>
+</style></head><body><div class="page"><svg class="dec" style="left:96mm;top:12mm;width:4.5mm" viewBox="0 0 20 20"><path d="M10 0C11 7 13 9 20 10 13 11 11 13 10 20 9 13 7 11 0 10 7 9 9 7 10 0z" fill="#fde3a7"/></svg><svg class="dec" style="left:90mm;top:21mm;width:2.8mm" viewBox="0 0 20 20"><path d="M10 0C11 7 13 9 20 10 13 11 11 13 10 20 9 13 7 11 0 10 7 9 9 7 10 0z" fill="#bfdff3"/></svg><svg class="dec" style="left:8mm;top:118mm;width:3.5mm" viewBox="0 0 20 20"><path d="M10 0C11 7 13 9 20 10 13 11 11 13 10 20 9 13 7 11 0 10 7 9 9 7 10 0z" fill="#f1c6cb"/></svg><svg class="dec" style="left:188mm;top:128mm;width:4mm" viewBox="0 0 20 20"><path d="M10 0C11 7 13 9 20 10 13 11 11 13 10 20 9 13 7 11 0 10 7 9 9 7 10 0z" fill="#fde3a7"/></svg>
 <div class="top"><span>AQUADORE</span><i>for beauty &amp; health</i></div>
 <div class="hero">
  <div><div class="q">ねぇ、ちゃんと<br>飲めてる？</div><div class="hook">みんな、<br><em>水が足りてない！</em></div><div class="en">Drink more water ♡</div></div>
- <div class="ph"><div class="arch2"></div><div class="arch"></div><img src="img/up.png"></div>
+ <div class="ph"><div class="arch2"></div><div class="arch"></div><img src="img/up.png"><div class="say">スタッフみんな<br><b>毎日飲んでます！</b></div></div>
 </div>
 <div class="ans"><div class="a1">だからこそ、このお水</div><div class="a2"><b>めっちゃおいしい</b>から<br>ついゴクゴク飲んじゃう！</div></div>
 <div class="prod"><div class="srv"><img src="img/server.png"><span>選べる2タイプ</span></div><div class="pr"><div class="name"><span class="tag">水質にこだわったウォーターサーバー</span><div class="ename">Aquadore</div><h1>アクアドーレ</h1><p>タンクに<b>水道水を注ぐだけ</b>。重いボトルの注文も交換もナシ</p></div>
@@ -80,7 +86,7 @@ body{font-variant-numeric:lining-nums;font-family:'Zen Maru Gothic',sans-serif;c
  <div class="hot"><span>♨</span> お湯も出るから、<b>白湯</b>もすぐ飲める！</div>
  <div class="u">白湯に ／ 飲み水に ／ ご飯・お料理に ／ スキンケアに</div></div>
 <div class="bottom">
- <div class="price"><div class="l">サーバーレンタル料</div>
+ <div class="price"><div class="badges"><span>ボトル不要</span><span>工事不要</span><span>簡単設置</span></div><div class="l">サーバーレンタル料</div>
   <div class="mo">月額 <b>3,980</b>円<span class="tx">（税抜）</span></div>
   <div class="inc">税込 4,378円</div>
   <div class="row"><span>1日あたり約133円（税抜）</span><span>年1回メンテナンス無料</span></div></div>

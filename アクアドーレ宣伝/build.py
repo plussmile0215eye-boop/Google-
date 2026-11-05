@@ -80,6 +80,12 @@ body{font-variant-numeric:lining-nums;font-family:'Zen Maru Gothic',sans-serif;c
 .u{font-size:10pt;font-weight:700;color:%(sub)s;margin-top:1mm}
 .bottom{margin-top:auto;padding-top:3mm;display:flex;gap:4mm;position:relative;z-index:1}
 .price{flex:1;background:rgba(255,255,255,.9);border-radius:5mm;padding:3mm 5mm;text-align:center;box-shadow:0 .8mm 2.5mm rgba(120,90,90,.08);display:flex;flex-direction:column;justify-content:center}
+.say{position:absolute;z-index:3;right:calc(100%% - 6mm);top:-1mm;white-space:nowrap;background:#fff;border:.45mm solid %(a)s;border-radius:4mm;padding:1.8mm 3.2mm;font-size:9.5pt;font-weight:900;color:%(sub)s;line-height:1.35;text-align:center;box-shadow:0 .8mm 2mm rgba(120,90,90,.1)}
+.say b{color:%(a)s;font-size:11.5pt}
+.say:after{content:"";position:absolute;right:-2.2mm;top:62%%;width:3.4mm;height:3.4mm;background:#fff;border-right:.45mm solid %(a)s;border-top:.45mm solid %(a)s;transform:rotate(45deg) skew(8deg,8deg)}
+.badges{display:flex;gap:2mm;justify-content:center;margin-bottom:2.5mm}
+.badges span{font-size:9.5pt;font-weight:900;color:%(b)s;border:.4mm solid %(bsoft)s;background:#fff;border-radius:10mm;padding:.6mm 3mm}
+.badges span:before{content:"✓ ";color:%(a)s}
 .price .l{font-size:11pt;font-weight:900;color:%(a2)s;letter-spacing:.1em}
 .price .mo{margin-top:1mm;font-weight:900;font-size:13pt;line-height:1}
 .price .mo b{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:42pt;color:%(a)s;letter-spacing:.01em}
@@ -100,7 +106,7 @@ BODY = """<div class="page">%(decor)s
 <div class="top"><span>AQUADORE</span><i>for beauty &amp; health</i></div>
 <div class="hero">
  <div><div class="q">%(q)s</div><div class="hook">%(hook1)s<br><em>水が足りてない！</em></div><div class="en">%(en)s ♡</div></div>
- <div class="ph"><div class="arch2"></div><div class="arch"></div><img src="img/up.png"></div>
+ <div class="ph"><div class="arch2"></div><div class="arch"></div><img src="img/up.png"><div class="say">スタッフみんな<br><b>毎日飲んでます！</b></div></div>
 </div>
 <div class="ans"><div class="a1">だからこそ、このお水</div><div class="a2"><b>めっちゃおいしい</b>から<br>ついゴクゴク飲んじゃう！</div></div>
 <div class="prod"><div class="srv"><img src="img/server.png"><span>選べる2タイプ</span></div><div class="pr"><div class="name"><span class="tag">水質にこだわったウォーターサーバー</span><div class="ename">Aquadore</div><h1>アクアドーレ</h1><p>タンクに<b>水道水を注ぐだけ</b>。重いボトルの注文も交換もナシ</p></div>
@@ -113,7 +119,7 @@ BODY = """<div class="page">%(decor)s
  <div class="hot"><span>♨</span> お湯も出るから、<b>白湯</b>もすぐ飲める！</div>
  <div class="u">白湯に ／ 飲み水に ／ ご飯・お料理に ／ スキンケアに</div></div>
 <div class="bottom">
- <div class="price"><div class="l">サーバーレンタル料</div>
+ <div class="price"><div class="badges"><span>ボトル不要</span><span>工事不要</span><span>簡単設置</span></div><div class="l">サーバーレンタル料</div>
   <div class="mo">月額 <b>3,980</b>円<span class="tx">（税抜）</span></div>
   <div class="inc">税込 4,378円</div>
   <div class="row"><span>1日あたり約133円（税抜）</span><span>年1回メンテナンス無料</span></div></div>
@@ -126,9 +132,9 @@ BODY = """<div class="page">%(decor)s
 for name, t in THEMES.items():
     t = dict(t, hlsoft=t["hl"] + "66")
     d = [SPARK.format(x=x, y=y, w=w, c=c) for x, y, w, c in
-         [(120, 16, 5, t["hl"]), (113, 27, 3, t["bsoft"]), (8, 118, 3.5, t["line"]), (188, 128, 4, t["hl"])]]
+         [(96, 12, 4.5, t["hl"]), (90, 21, 2.8, t["bsoft"]), (8, 118, 3.5, t["line"]), (188, 128, 4, t["hl"])]]
     if t["snow"]:
-        d += [SNOW.format(x=x, y=y, w=w, c=t["b2"]) for x, y, w in [(104, 12, 6), (182, 112, 5.5), (190, 205, 4.5)]]
+        d += [SNOW.format(x=x, y=y, w=w, c=t["b2"]) for x, y, w in [(102, 31, 5), (182, 112, 5.5), (190, 205, 4.5)]]
     html = ('<!doctype html><html lang="ja"><head><meta charset="utf-8">'
             '<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900'
             '&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet">'
