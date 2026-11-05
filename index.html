@@ -137,6 +137,16 @@
   .base-price div { display: flex; align-items: baseline; gap: 8px; margin: 4px 0; }
   .base-price dt { white-space: nowrap; }
   .base-price dd { margin: 0 0 0 auto; font-weight: bold; }
+  .campaign-box { text-align: center; background: var(--accent-strong); color: #fff; border-radius: 12px; padding: 12px; margin: 0 0 16px; }
+  .campaign-box b { display: block; font-size: .9rem; }
+  .campaign-box span { font-size: 1.2rem; font-weight: bold; }
+  .campaign-box em { font-style: normal; font-size: 1.6rem; margin: 0 .15em; }
+  .campaign-top { margin-top: 20px; }
+  .campaign-top a { display: inline-block; background: var(--accent-strong); color: #fff; text-decoration: none; border-radius: 999px; padding: 8px 18px; font-size: .95rem; }
+  s.campaign { color: var(--muted); font-size: .85em; font-weight: normal; margin-right: 4px; }
+  .regular { display: none; }
+  body.campaign-ended .campaign { display: none !important; }
+  body.campaign-ended .regular { display: inline; }
   .tax { font-size: .8rem; color: var(--muted); text-align: center; margin: 6px 0 0; }
   .tier { margin-top: 10px; }
   .tier-head { display: flex; align-items: baseline; gap: 10px; font-size: 1.15rem; margin-bottom: 6px; }
@@ -176,6 +186,7 @@
     <a class="cta sub" href="https://line.me/R/ti/p/@eey7298l">LINEで相談・予約</a>
     <a class="cta insta" href="https://www.instagram.com/smile_0215_/">Instagramで施術写真を見る</a>
   </div>
+  <p class="campaign campaign-top"><a href="#air-ext">11月30日（月）まで <b>増毛エアエク半額</b> キャンペーン中 ›</a></p>
 </header>
 
 <main>
@@ -216,23 +227,27 @@
     <p>自毛1本に2〜4本の人工毛をプラスして、ふんわり自然なボリュームを出す増毛メニューです。つむじや分け目のボリュームが気になる方におすすめです。カラーも選べます。</p>
     <div class="air-menu">
       <h3>エアエクMENU</h3>
+      <div class="campaign campaign-box">
+        <b>＼ 11月30日（月）まで ／</b>
+        <span>増毛エアエク<em>半額</em>キャンペーン中</span>
+      </div>
       <dl class="base-price">
-        <div><dt>1本</dt><dd>¥44</dd></div>
+        <div><dt>1本</dt><dd><s class="campaign">¥44</s> <span class="campaign">¥22</span><span class="regular">¥44</span></dd></div>
         <div><dt>リペア</dt><dd>¥22</dd></div>
-        <div><dt>100本毎</dt><dd>¥4,400</dd></div>
+        <div><dt>100本毎</dt><dd><s class="campaign">¥4,400</s> <span class="campaign">¥2,200</span><span class="regular">¥4,400</span></dd></div>
       </dl>
       <p class="tax">※価格はすべて税込です。</p>
       <div class="tier">
-        <div class="tier-head"><span>300本</span><i></i><b>¥13,200</b></div>
+        <div class="tier-head"><span>300本</span><i></i><s class="campaign">¥13,200</s><b><span class="campaign">¥6,600</span><span class="regular">¥13,200</span></b></div>
       </div>
       <div class="tier">
-        <div class="tier-head"><span>600本</span><i></i><b>¥26,400</b></div>
+        <div class="tier-head"><span>600本</span><i></i><s class="campaign">¥26,400</s><b><span class="campaign">¥13,200</span><span class="regular">¥26,400</span></b></div>
       </div>
       <div class="tier">
-        <div class="tier-head"><span>800本</span><i></i><b>¥35,200</b></div>
+        <div class="tier-head"><span>800本</span><i></i><s class="campaign">¥35,200</s><b><span class="campaign">¥17,600</span><span class="regular">¥35,200</span></b></div>
       </div>
       <div class="tier">
-        <div class="tier-head"><span>1,000本</span><i></i><b>¥44,000</b></div>
+        <div class="tier-head"><span>1,000本</span><i></i><s class="campaign">¥44,000</s><b><span class="campaign">¥22,000</span><span class="regular">¥44,000</span></b></div>
       </div>
       <h4>カラー</h4>
       <ul class="hair-colors"><li><i style="background:#151313"></i>ブラック</li><li><i style="background:#2a2422"></i>ナチュラルブラック</li><li><i style="background:#3e3029"></i>ナチュラルブラウン</li><li><i style="background:#4a2a24"></i>レッドブラウン</li><li><i style="background:#6a4a33"></i>オレンジブラウン</li><li><i style="background:#7d776c"></i>アッシュ</li><li><i style="background:#4a1f22"></i>レッド</li><li><i style="background:#a88a5c"></i>ゴールド</li><li><i style="background:#ecebe6"></i>ホワイト</li></ul>
@@ -317,5 +332,9 @@
 
 <footer><p>Instagram：<a href="https://www.instagram.com/smile_0215_/">しおり @smile_0215_</a>｜<a href="https://www.instagram.com/manami.v_v.y/">まなみ @manami.v_v.y</a>｜<a href="https://www.instagram.com/smile.__haru/">はるか @smile.__haru</a>｜<a href="https://www.instagram.com/smile._ayu/">あゆか @smile._ayu</a><br><a href="https://beauty.hotpepper.jp/kr/slnH000443622/">ホットペッパービューティー</a>｜<a href="https://line.me/R/ti/p/@eey7298l">公式LINE</a></p>© +Smile.【プリュスマイル】｜熊本市東区尾ノ上 マツエク・まつげパーマ・眉毛サロン</footer>
 </div>
+<script>
+  // 増毛エアエク半額キャンペーン：2026年11月30日（日本時間）の終わりで自動的に通常料金の表示に戻す
+  if (Date.now() >= Date.parse('2026-12-01T00:00:00+09:00')) document.body.classList.add('campaign-ended');
+</script>
 </body>
 </html>
