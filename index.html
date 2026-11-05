@@ -84,7 +84,7 @@
     { "@type": "Question", "name": "マツエクとまつげパーマ、どちらがいいですか？",
       "acceptedAnswer": { "@type": "Answer", "text": "自まつげを活かして自然に上げたい方はパリジェンヌラッシュリフトやまつ毛カール、長さやボリュームを出したい方はフラットラッシュやアップワードラッシュ、LEDエクステがおすすめです。カウンセリングでご提案します。" } },
     { "@type": "Question", "name": "増毛エアエクはどんなメニューですか？",
-      "acceptedAnswer": { "@type": "Answer", "text": "自毛1本に2〜4本の人工毛をプラスして、ふんわり自然なボリュームを出す増毛メニューです。つむじや分け目のボリュームが気になる方におすすめです。カラーも選べます。料金は100本4,400円（以降100本ごとに4,400円）です。" } },
+      "acceptedAnswer": { "@type": "Answer", "text": "自毛1本に2〜4本の人工毛をプラスして、ふんわり自然なボリュームを出す増毛メニューです。つむじや分け目のボリュームが気になる方におすすめです。カラーも選べます。料金は1本44円（100本ごとに4,400円）で、300本13,200円・600本26,400円・800本35,200円・1,000本44,000円が目安です。リペアは22円です（すべて税込）。" } },
     { "@type": "Question", "name": "増毛エアエクはどうやって予約しますか？",
       "acceptedAnswer": { "@type": "Answer", "text": "増毛エアエクのご予約は、InstagramのDM（エアエク専用アカウント @aireku.kumamoto.smile）またはお電話（080-9365-7551）で承っています。ネット予約（ホットペッパービューティー）には掲載していません。" } },
     { "@type": "Question", "name": "支払い方法は？",
@@ -130,8 +130,23 @@
   .cta.sub { background: transparent; color: var(--accent-strong); border: 2px solid var(--accent-strong); }
   .cta.insta { background: linear-gradient(45deg, #f09433, #dc2743 50%, #bc1888); color: #fff; }
   .insta-box { text-align: center; }
-  .price { margin: 12px 0; }
-  .price th { width: auto; }
+  .air-menu { border: 1px solid var(--line); border-radius: 12px; padding: 20px 16px; margin: 16px 0; background: var(--bg); }
+  .air-menu h3 { text-align: center; font-size: 1.4rem; letter-spacing: .12em; margin: 0 0 12px; font-weight: normal; }
+  .air-menu h4 { font-size: 1rem; margin: 20px 0 8px; }
+  .base-price { margin: 0 auto; max-width: 280px; }
+  .base-price div { display: flex; align-items: baseline; gap: 8px; margin: 4px 0; }
+  .base-price dt { white-space: nowrap; }
+  .base-price dd { margin: 0 0 0 auto; font-weight: bold; }
+  .tax { font-size: .8rem; color: var(--muted); text-align: center; margin: 6px 0 0; }
+  .tier { margin-top: 18px; }
+  .tier-head { display: flex; align-items: baseline; gap: 10px; font-size: 1.15rem; margin-bottom: 6px; }
+  .tier-head i { flex: 1; border-bottom: 1px dotted var(--muted); }
+  .tier-head b { font-size: 1.25rem; }
+  .tier img { width: 100%; height: auto; display: block; border-radius: 6px; }
+  .views { display: grid; grid-template-columns: repeat(3, 1fr); text-align: center; font-size: .8rem; color: var(--muted); margin-top: 6px; }
+  .hair-colors { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(116px, 1fr)); gap: 12px 6px; }
+  .hair-colors li { display: flex; flex-direction: column; align-items: center; font-size: .75rem; white-space: nowrap; text-align: center; gap: 4px; }
+  .hair-colors i { width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--line); box-shadow: inset -4px -6px 8px rgba(255,255,255,.18); }
   .videos { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 16px 0; }
   .videos figure { margin: 0; }
   .videos video { width: 100%; height: auto; border-radius: 12px; background: #000; display: block; }
@@ -201,12 +216,38 @@
   <h2>増毛エアエク</h2>
   <div class="card">
     <p>自毛1本に2〜4本の人工毛をプラスして、ふんわり自然なボリュームを出す増毛メニューです。つむじや分け目のボリュームが気になる方におすすめです。カラーも選べます。</p>
-    <table class="price">
-      <tr><th>100本</th><td>4,400円</td></tr>
-      <tr><th>200本</th><td>8,800円</td></tr>
-      <tr><th>300本</th><td>13,200円</td></tr>
-      <tr><th>以降100本ごと</th><td>4,400円</td></tr>
-    </table>
+    <div class="air-menu">
+      <h3>エアエクMENU</h3>
+      <dl class="base-price">
+        <div><dt>1本</dt><dd>¥44</dd></div>
+        <div><dt>リペア</dt><dd>¥22</dd></div>
+        <div><dt>100本毎</dt><dd>¥4,400</dd></div>
+      </dl>
+      <p class="tax">※価格はすべて税込です。</p>
+      <div class="tier before">
+        <img src="images/air-ext-before.jpg" alt="増毛エアエクの施術前（フロント・バック・サイド）" loading="lazy">
+      </div>
+      <div class="tier">
+        <div class="tier-head"><span>300本</span><i></i><b>¥13,200</b></div>
+        <img src="images/air-ext-300.jpg" alt="増毛エアエク300本の仕上がり（フロント・バック・サイド）" loading="lazy">
+      </div>
+      <div class="tier">
+        <div class="tier-head"><span>600本</span><i></i><b>¥26,400</b></div>
+        <img src="images/air-ext-600.jpg" alt="増毛エアエク600本の仕上がり（フロント・バック・サイド）" loading="lazy">
+      </div>
+      <div class="tier">
+        <div class="tier-head"><span>800本</span><i></i><b>¥35,200</b></div>
+        <img src="images/air-ext-800.jpg" alt="増毛エアエク800本の仕上がり（フロント・バック・サイド）" loading="lazy">
+      </div>
+      <div class="tier">
+        <div class="tier-head"><span>1,000本</span><i></i><b>¥44,000</b></div>
+        <img src="images/air-ext-1000.jpg" alt="増毛エアエク1,000本の仕上がり（フロント・バック・サイド）" loading="lazy">
+      </div>
+      <div class="views"><span>フロント</span><span>バック</span><span>サイド</span></div>
+      <h4>カラー</h4>
+      <ul class="hair-colors"><li><i style="background:#151313"></i>ブラック</li><li><i style="background:#2a2422"></i>ナチュラルブラック</li><li><i style="background:#3e3029"></i>ナチュラルブラウン</li><li><i style="background:#4a2a24"></i>レッドブラウン</li><li><i style="background:#6a4a33"></i>オレンジブラウン</li><li><i style="background:#7d776c"></i>アッシュ</li><li><i style="background:#4a1f22"></i>レッド</li><li><i style="background:#a88a5c"></i>ゴールド</li><li><i style="background:#ecebe6"></i>ホワイト</li></ul>
+      <p class="tax">詳しくはスタッフまでお尋ねください。</p>
+    </div>
     <div class="videos">
       <figure>
         <video src="videos/zomou-air-ext-before-after.mp4" poster="videos/zomou-air-ext-before-after.jpg" controls muted playsinline preload="none"></video>
@@ -256,7 +297,7 @@
   <details><summary>当日予約はできますか？</summary><p>はい、空きがあれば当日のご予約も受け付けています。ネット予約なら空き状況をすぐ確認できます。お電話（080-9365-7551）や公式LINEでも受け付けています。</p></details>
   <details><summary>男性でも利用できますか？</summary><p>はい。眉毛の施術などはメンズの方にもおすすめです。</p></details>
   <details><summary>マツエクとまつげパーマ、どちらがいいですか？</summary><p>自まつげを活かして自然に上げたい方はパリジェンヌラッシュリフトやまつ毛カール、長さやボリュームを出したい方はフラットラッシュやアップワードラッシュ、LEDエクステがおすすめです。カウンセリングでご提案します。</p></details>
-  <details><summary>増毛エアエクはどんなメニューですか？</summary><p>自毛1本に2〜4本の人工毛をプラスして、ふんわり自然なボリュームを出す増毛メニューです。つむじや分け目のボリュームが気になる方におすすめです。カラーも選べます。料金は100本4,400円（以降100本ごとに4,400円）です。</p></details>
+  <details><summary>増毛エアエクはどんなメニューですか？</summary><p>自毛1本に2〜4本の人工毛をプラスして、ふんわり自然なボリュームを出す増毛メニューです。つむじや分け目のボリュームが気になる方におすすめです。カラーも選べます。料金は1本44円（100本ごとに4,400円）で、300本13,200円・600本26,400円・800本35,200円・1,000本44,000円が目安です。リペアは22円です（すべて税込）。</p></details>
   <details><summary>増毛エアエクはどうやって予約しますか？</summary><p>増毛エアエクのご予約は、InstagramのDM（エアエク専用アカウント @aireku.kumamoto.smile）またはお電話（080-9365-7551）で承っています。ネット予約（ホットペッパービューティー）には掲載していません。</p></details>
   <details><summary>支払い方法は？</summary><p>現金のほか、Visa・Mastercard・JCB・American Express・Diners Club・Discover、iD・d払い・LINE Pay・au PAY・COIN+がご利用いただけます。</p></details>
   <details><summary>キャンセル料はかかりますか？</summary><p>当日キャンセルは無断キャンセル扱いとなり、施術料の50%を頂戴します。大幅な遅刻の場合は1時間2,000円を頂戴します。ご予約の変更は事前にご連絡ください。</p></details>
