@@ -41,6 +41,7 @@
   /* sections */
   h2 { font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 19pt; letter-spacing: .14em;
     display: inline-block; border-bottom: 2px solid var(--ink); line-height: 1.15; padding-bottom: .5mm; }
+  .ja-h { font-family:"Noto Sans JP"; font-weight:700; letter-spacing:.05em; }
   h2.ja { font-family: "Noto Sans JP"; font-weight: 700; letter-spacing: .1em; }
   h2.gold { color: var(--gold); border-color: var(--gold); }
   .h-sub { font-size: 9.5pt; margin-left: 3mm; color: var(--ink); }
@@ -118,6 +119,16 @@
   .footer { position: absolute; left: 0; right: 0; bottom: 8mm; text-align: center; font-family: "Cormorant Garamond", serif;
     font-size: 10pt; letter-spacing: .3em; color: var(--sub); }
   .tax { position: absolute; right: 15mm; bottom: 8mm; font-size: 8pt; color: var(--sub); }
+
+  .course-row { display:flex; justify-content:space-between; align-items:baseline; }
+  .cprice { font-size:16pt; font-weight:700; letter-spacing:.06em; }
+  .course-en2 { font-family:"Cormorant Garamond",serif; font-style:italic; color:var(--sub); font-size:11pt; margin:1mm 0 -1mm; }
+  .course-row + ul, .course-row + .cnote + ul { margin-top:2mm; }
+  .course-row h2 { font-size:16pt; }
+  .cnote { position:absolute; right:0; top:16mm; width:52mm; text-align:center; color:#d9883e; font-size:9.5pt; line-height:1.5;
+    border:2px dashed #ee9a68; border-radius:4mm; padding:2.5mm 2mm; }
+  .cnote b { font-size:11pt; }
+  .cnote i { display:block; font-family:"Cormorant Garamond",serif; font-size:10pt; line-height:1.2; margin-top:1mm; color:#b9763a; }
 </style>
 </head>
 <body>
@@ -504,6 +515,32 @@
         </ul>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ============ 7. COURSE ============ -->
+<section class="page" style="padding-top:11mm">
+  <div class="title">COURSE MENU</div>
+  <div class="bar"></div>
+  <div class="hours" style="letter-spacing:.15em">コースメニューもございます。お気軽にお問い合わせください<small>Course menus are available — please ask our staff.</small></div>
+
+  <div class="sec" style="position:relative; margin-top:4mm">
+    <div class="course-row"><h2>LUNCH COURSE</h2><span class="cprice">¥3,850</span></div>
+    <div class="cnote"><b>2名様〜</b><br><b>4日前までに要予約</b><br>仕入れ状況により<br>内容は変わります。<i>For 2 or more guests.<br>Reserve at least 4 days ahead.<br>Dishes may vary with availability.</i></div>
+    <ul class="items compact"><li><span class="name"><span class="ja">ウェルカムドリンク</span><span class="en">Welcome Drink</span></span></li><li><span class="name"><span class="ja">前菜盛り合わせ　スープ・パン付き</span><span class="en">Assorted Appetizers, with Soup &amp; Bread</span></span></li><li><span class="name"><span class="ja">旬魚と旬菜で本日のパスタ</span><span class="en">Today’s Pasta with Seasonal Fish &amp; Vegetables</span></span></li><li><span class="name"><span class="ja">本日の国産牛料理</span><span class="en">Today’s Japanese Beef Dish</span></span></li><li><span class="name"><span class="ja">王様トマトのシュークリーム風</span><span class="en">“King Tomato” Cream Puff–Style Dessert</span></span></li><li><span class="name"><span class="ja">コーヒー or 紅茶</span><span class="en">Coffee or Tea</span></span></li></ul>
+  </div>
+
+  <div class="sec" style="position:relative; margin-top:4mm">
+    <div class="course-row"><h2>DINNER COURSE</h2><span class="cprice">¥4,400〜</span></div>
+    <div class="cnote"><b>2名様〜</b><br><b>3日前までに要予約</b><br>仕入れ状況により<br>内容は変わります。<i>For 2 or more guests.<br>Reserve at least 3 days ahead.<br>Dishes may vary with availability.</i></div>
+    <ul class="items compact"><li><span class="name"><span class="ja">前菜盛り合わせ</span><span class="en">Assorted Appetizers</span></span></li><li><span class="name"><span class="ja">季節のスープとライ麦パン</span><span class="en">Seasonal Soup &amp; Rye Bread</span></span></li><li><span class="name"><span class="ja">本日のパスタ</span><span class="en">Today’s Pasta</span></span></li><li><span class="name"><span class="ja">本日のお魚　例：真鯛のソテー</span><span class="en">Today’s Fish — e.g. Sautéed Red Sea Bream</span></span></li><li><span class="name"><span class="ja">本日のお肉　例：あそび豚の蒸し焼き</span><span class="en">Today’s Meat — e.g. Braised “Asobi” Pork</span></span></li><li><span class="name"><span class="ja">本日のリゾット　例：ライスコロッケ</span><span class="en">Today’s Risotto — e.g. Rice Croquettes</span></span></li><li><span class="name"><span class="ja">王様トマトのシュークリーム風</span><span class="en">“King Tomato” Cream Puff–Style Dessert</span></span></li></ul>
+  </div>
+
+  <div class="sec" style="position:relative; margin-top:4mm">
+    <div class="course-row"><h2><span class="ja-h">飲み放題付き</span>DINNER COURSE</h2><span class="cprice">¥5,500〜</span></div>
+    <div class="course-en2">Dinner Course with All-You-Can-Drink</div>
+    <div class="cnote"><b>4名様〜</b><br><b>3日前までに要予約</b><br>仕入れ状況により<br>内容は変わります。<i>For 4 or more guests.<br>Reserve at least 3 days ahead.<br>Dishes may vary with availability.</i></div>
+    <ul class="items compact"><li><span class="name"><span class="ja">前菜盛り合わせ</span><span class="en">Assorted Appetizers</span></span></li><li><span class="name"><span class="ja">パスタ</span><span class="en">Pasta</span></span></li><li><span class="name"><span class="ja">本日のお魚　例：エビのフリット</span><span class="en">Today’s Fish — e.g. Shrimp Fritters</span></span></li><li><span class="name"><span class="ja">本日のお肉　例：若鶏のロースト</span><span class="en">Today’s Meat — e.g. Roast Chicken</span></span></li><li><span class="name"><span class="ja">本日のリゾット</span><span class="en">Today’s Risotto</span></span></li><li><span class="name"><span class="ja">プチデザート</span><span class="en">Petit Dessert</span></span></li></ul>
   </div>
 </section>
 
