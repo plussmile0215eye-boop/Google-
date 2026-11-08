@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>+MINA COCO メニュー</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@500;600&family=Noto+Color+Emoji&display=block">
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1d1a17;
+    --sub: #7a6d62;
+    --rule: #8a6f5e;
+    --gold: #a88a5a;
+    --peach: #f2b48f;
+    --paper: #f3f2ee;
+  }
+  body { font-family: "Noto Sans JP", "Noto Color Emoji", sans-serif; color: var(--ink); background: #ccc; }
+  .page {
+    width: 210mm; height: 297mm; overflow: hidden; position: relative;
+    background: var(--paper);
+    background-image: radial-gradient(rgba(0,0,0,.025) 1px, transparent 1px);
+    background-size: 3px 3px;
+    padding: 15mm 15mm 12mm;
+    page-break-after: always;
+  }
+  .page:last-child { page-break-after: auto; }
+
+  /* header */
+  .title { text-align: center; font-family: "Montserrat", sans-serif; font-weight: 500;
+    font-size: 34pt; letter-spacing: .08em; line-height: 1; }
+  .title-ja { text-align: center; font-size: 10pt; letter-spacing: .3em; color: var(--sub); margin-top: 2.5mm; }
+  .bar { position: relative; height: 2px; background: var(--rule); margin: 4mm auto 0; width: 62%; }
+  .bar::before, .bar::after { content: ""; position: absolute; top: -4px; width: 9px; height: 9px;
+    background: var(--rule); transform: rotate(45deg); }
+  .bar::before { left: -4px; } .bar::after { right: -4px; }
+  .hours { text-align: center; font-size: 10.5pt; letter-spacing: .35em; margin-top: 3.5mm; }
+  .hours small { display: block; font-family: "Cormorant Garamond", serif; font-style: italic;
+    letter-spacing: .08em; font-size: 10.5pt; color: var(--sub); margin-top: .5mm; }
+
+  /* sections */
+  h2 { font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 19pt; letter-spacing: .14em;
+    display: inline-block; border-bottom: 2px solid var(--ink); line-height: 1.15; padding-bottom: .5mm; }
+  h2.ja { font-family: "Noto Sans JP"; font-weight: 700; letter-spacing: .1em; }
+  h2.gold { color: var(--gold); border-color: var(--gold); }
+  .h-sub { font-size: 9.5pt; margin-left: 3mm; color: var(--ink); }
+  .h-sub i { font-family: "Cormorant Garamond", serif; color: var(--sub); margin-left: 1.5mm; font-size: 10.5pt; }
+  .sec { margin-top: 4.5mm; }
+  .sec > .head { margin-bottom: 2.5mm; }
+
+  ul.items { list-style: none; }
+  ul.items li { display: flex; align-items: baseline; gap: 2mm; padding: 1.15mm 0 1.15mm 3mm; }
+  ul.items .name { flex: 0 1 auto; }
+  ul.items .name .ja { font-size: 11.5pt; line-height: 1.3; }
+  ul.items .name .ja::before { content: "・"; margin-left: -3mm; }
+  ul.items .name .en { display: block; font-family: "Cormorant Garamond", serif; font-style: italic;
+    font-size: 11pt; color: var(--sub); line-height: 1.05; }
+  ul.items .dots { flex: 1 1 auto; border-bottom: 1.5px dotted #bfb3a8; transform: translateY(-1.5mm); min-width: 6mm; }
+  ul.items .price { font-size: 11.5pt; white-space: nowrap; font-weight: 500; }
+  ul.items.compact li { padding: .25mm 0 .25mm 3mm; }
+  ul.items.plain li { padding: .6mm 0 .6mm 3mm; }
+  .all { font-size: 11pt; font-weight: 500; text-align: right; margin-top: 1mm; }
+  .all i { font-family: "Cormorant Garamond", serif; color: var(--sub); }
+  .note { font-size: 9pt; color: var(--ink); margin: .5mm 0 0 6mm; }
+  .note i { font-family: "Cormorant Garamond", serif; color: var(--sub); font-size: 10pt; margin-left: 1mm; }
+
+  .photo { position: absolute; border-radius: 50%; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,.12); }
+
+  .box { position: absolute; border: 2.5px dashed #c3b08f; border-radius: 6mm; padding: 3.5mm 4mm; text-align: center; background: rgba(255,255,255,.35); }
+  .box b { display: block; white-space: nowrap; font-size: 11pt; line-height: 1.45; }
+  .box .en { font-family: "Cormorant Garamond", serif; font-style: italic; color: var(--sub); font-size: 10.5pt; line-height: 1.2; }
+  .box p { white-space: nowrap; font-size: 8pt; line-height: 1.5; margin-top: 1.5mm; }
+
+  .daily { position: absolute; right: 15mm; top: 47mm; text-align: right; font-size: 10.5pt;
+    border-bottom: 2px dashed var(--rule); padding-bottom: 1mm; }
+  .daily i { display: block; font-family: "Cormorant Garamond", serif; color: var(--sub); font-size: 10.5pt; }
+
+  /* lunch */
+  ol.lunch { list-style: none; margin-top: 7mm; }
+  ol.lunch li { display: flex; align-items: baseline; gap: 2mm; padding: 1.4mm 0; }
+  ol.lunch .num { font-family: "Montserrat"; font-weight: 600; font-size: 14pt; width: 9mm; }
+  ol.lunch .ja { font-size: 14pt; letter-spacing: .12em; }
+  ol.lunch .en { display: block; font-family: "Cormorant Garamond", serif; font-style: italic; color: var(--sub); font-size: 12pt; letter-spacing: .02em; }
+  ol.lunch .price { font-size: 14pt; letter-spacing: .08em; white-space: nowrap; font-weight: 500; }
+  ol.lunch .dots { flex: 1; border-bottom: 1.5px dotted #bfb3a8; transform: translateY(-2mm); }
+  .bubble { position: absolute; right: 8mm; top: 100mm; width: 30mm; height: 30mm; border-radius: 50%;
+    background: var(--peach); display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; font-size: 9pt; line-height: 1.45; }
+  .bubble i { font-family: "Cormorant Garamond", serif; font-size: 9.5pt; line-height: 1.1; margin-top: 1mm; color: #5c4a3e; }
+  .center { text-align: center; }
+  .incl { margin-top: 4mm; font-weight: 700; font-size: 12.5pt; line-height: 1.55; }
+  .incl u { text-underline-offset: 3px; }
+  .incl i, .center i.en { display: block; font-family: "Cormorant Garamond", serif; font-weight: 500; color: var(--sub); font-size: 11pt; line-height: 1.25; margin-bottom: 1.5mm; }
+  .course { margin-top: 3mm; display: flex; justify-content: space-between; align-items: baseline;
+    font-weight: 700; font-size: 17pt; letter-spacing: .1em; padding: 0 1mm; }
+  .course-en { font-family: "Cormorant Garamond", serif; font-style: italic; color: var(--sub); font-size: 12pt; padding-left: 9mm; margin-top: -.5mm; }
+  .bar.peach { background: var(--peach); width: 100%; margin-top: 2.5mm; }
+  .bar.peach::before, .bar.peach::after { background: var(--paper); border: 2px solid var(--peach); }
+  .course-desc { font-size: 10.5pt; letter-spacing: .2em; line-height: 1.6; margin-top: 3mm; }
+  .opt { position: absolute; right: 15mm; bottom: 28mm; border: 2px dashed #ee9a68; border-radius: 4mm; padding: 3mm 5mm; }
+  .opt li { list-style: none; font-weight: 700; font-size: 11.5pt; letter-spacing: .1em; display: flex; justify-content: space-between; gap: 6mm; }
+  .opt li i { font-family: "Cormorant Garamond", serif; font-weight: 500; color: var(--sub); font-size: 10.5pt; letter-spacing: 0; display: block; }
+
+  /* drinks two-column */
+  .cols { display: grid; grid-template-columns: 1fr 1fr; column-gap: 9mm; margin-top: 4mm; }
+  .cols .sec { margin-top: 3.5mm; }
+  .cols ul.items .name .ja { font-size: 11pt; }
+  .cols ul.items .price, .cols .all { font-size: 11pt; }
+  .cols ul.items .name .en { font-size: 10.5pt; }
+
+  .nomi-head { display: flex; align-items: baseline; justify-content: space-between; }
+  .nomi-title { font-size: 34pt; font-weight: 700; letter-spacing: .12em; }
+  .nomi-price { text-align: right; font-size: 15pt; font-weight: 500; }
+  .nomi-price i { display: block; font-family: "Cormorant Garamond", serif; color: var(--sub); font-size: 12pt; }
+  .line { height: 2px; background: #b5a59a; margin-top: 2mm; }
+  .kind { font-family: "Montserrat"; font-size: 17pt; font-weight: 600; letter-spacing: .12em; display: inline-block; border-bottom: 2px solid; }
+  .kind.al { color: #e46bb3; } .kind.na { color: #23a565; }
+  .footer { position: absolute; left: 0; right: 0; bottom: 8mm; text-align: center; font-family: "Cormorant Garamond", serif;
+    font-size: 10pt; letter-spacing: .3em; color: var(--sub); }
+  .tax { position: absolute; right: 15mm; bottom: 8mm; font-size: 8pt; color: var(--sub); }
+</style>
+</head>
+<body>
+
+<!-- ============ 1. DINNER (à la carte / fish / meat) ============ -->
+<section class="page">
+  <div class="title">DINNER MENU</div>
+  <div class="bar"></div>
+  <div class="hours">17:00〜23:00（L.O. 22:00）<small>Last order 22:00</small></div>
+
+  <div class="daily">※別紙に日替わりメニューもございます<i>Daily specials are on a separate sheet</i></div>
+
+  <div class="sec" style="margin-top:8mm">
+    <div class="head"><h2>À la carte</h2></div>
+    <ul class="items compact" style="width:120mm">
+      <li><span class="name"><span class="ja">+MINA COCOサラダ</span><span class="en">+MINA COCO Salad</span></span><span class="dots"></span><span class="price">¥880</span></li>
+      <li><span class="name"><span class="ja">王様トマトカルパッチョ</span><span class="en">“King Tomato” Carpaccio</span></span><span class="dots"></span><span class="price">¥480</span></li>
+      <li><span class="name"><span class="ja">季節のフルーツとスペイン産生ハム</span><span class="en">Seasonal Fruit with Spanish Cured Ham</span></span><span class="dots"></span><span class="price">¥980</span></li>
+      <li><span class="name"><span class="ja">クリームチーズとたいわたの酒盗ディップ</span><span class="en">Cream Cheese Dip with Salted Sea Bream Innards</span></span><span class="dots"></span><span class="price">¥580</span></li>
+      <li><span class="name"><span class="ja">本日のアヒージョ〜バゲット付〜</span><span class="en">Today’s Ajillo, served with Baguette</span></span><span class="dots"></span><span class="price">¥980</span></li>
+      <li><span class="name"><span class="ja">ナスのミートグラタン</span><span class="en">Eggplant &amp; Meat Sauce Gratin</span></span><span class="dots"></span><span class="price">¥780</span></li>
+      <li><span class="name"><span class="ja">ポテトフライ</span><span class="en">French Fries</span></span><span class="dots"></span><span class="price">¥440</span></li>
+      <li><span class="name"><span class="ja">インカの目覚めポテトフライ</span><span class="en">“Inca no Mezame” Golden Potato Fries</span></span><span class="dots"></span><span class="price">¥680</span></li>
+      <li><span class="name"><span class="ja">ガーリックトースト</span><span class="en">Garlic Toast</span></span><span class="dots"></span><span class="price">¥450</span></li>
+    </ul>
+  </div>
+
+  <div class="box" style="right:10mm; top:96mm; width:60mm;">
+    <b>ディナーメニュー<br>テイクアウトできます！！</b>
+    <div class="en">Dinner menu available for takeout!</div>
+    <p>※ご提供までにお時間いただく場合も<br>ございますのでお早めにご注文ください</p>
+    <div class="en" style="font-size:9.5pt">Please order early, as preparation may take some time.</div>
+  </div>
+
+  <div class="sec">
+    <div class="head"><h2>Fish</h2></div>
+    <ul class="items compact" style="width:120mm">
+      <li><span class="name"><span class="ja">本日のカルパッチョ</span><span class="en">Today’s Carpaccio</span></span><span class="dots"></span><span class="price">¥880</span></li>
+      <li><span class="name"><span class="ja">エビのフリット ハニーマスタードソース</span><span class="en">Shrimp Fritters with Honey Mustard Sauce</span></span><span class="dots"></span><span class="price">¥780</span></li>
+    </ul>
+  </div>
+
+  <img class="photo" src="meat.jpg" style="right:12mm; top:170mm; width:45mm; height:45mm;" alt="">
+
+  <div class="sec">
+    <div class="head"><h2>Meat</h2></div>
+    <ul class="items compact" style="width:128mm">
+      <li><span class="name"><span class="ja">カリカリ豚足</span><span class="en">Crispy Pig’s Feet</span></span><span class="dots"></span><span class="price">¥550</span></li>
+      <li><span class="name"><span class="ja">白ワイン仕込みのチーズ唐揚げ</span><span class="en">White Wine–Marinated Cheese Fried Chicken</span></span><span class="dots"></span><span class="price">¥650</span></li>
+      <li><span class="name"><span class="ja">若鶏モモの小悪魔風</span><span class="en">Chicken Thigh “Diavola” Style</span></span><span class="dots"></span><span class="price">¥880</span></li>
+      <li><span class="name"><span class="ja">りんどうポークロースのローズマリーロースト</span><span class="en">Rindo Pork Loin Roasted with Rosemary</span></span><span class="dots"></span><span class="price">¥980</span></li>
+      <li><span class="name"><span class="ja">りんどうポークヒレのマスタードパン粉焼き</span><span class="en">Rindo Pork Fillet with Mustard Breadcrumb Crust</span></span><span class="dots"></span><span class="price">¥980</span></li>
+      <li><span class="name"><span class="ja">和牛ステーキ〜ジャポネソース〜</span><span class="en">Wagyu Steak with Japonaise Sauce</span></span><span class="dots"></span><span class="price">¥2,880</span></li>
+      <li><span class="name"><span class="ja">和牛のタリアータ〜バルサミコソース〜</span><span class="en">Wagyu Tagliata with Balsamic Sauce</span></span><span class="dots"></span><span class="price">¥2,880</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 2. DINNER (pizza / pasta / rice) ============ -->
+<section class="page">
+  <div class="title">DINNER MENU</div>
+  <div class="bar"></div>
+  <div class="hours">17:00〜23:00（L.O. 22:00）<small>Last order 22:00</small></div>
+
+  <img class="photo" src="pizza.jpg" style="right:12mm; top:52mm; width:58mm; height:58mm;" alt="">
+  <img class="photo" src="pasta.jpg" style="right:12mm; top:142mm; width:54mm; height:54mm;" alt="">
+
+  <div class="sec" style="margin-top:16mm">
+    <div class="head"><h2>Pizza</h2><span class="h-sub">〜カリッとクリスピーピザ〜<i>Crispy thin crust</i></span></div>
+    <ul class="items" style="width:112mm">
+      <li><span class="name"><span class="ja">マルゲリータ</span><span class="en">Margherita</span></span><span class="dots"></span><span class="price">¥1,180</span></li>
+      <li><span class="name"><span class="ja">アンチョビと王様トマトのピザ</span><span class="en">Anchovy &amp; “King Tomato” Pizza</span></span><span class="dots"></span><span class="price">¥1,180</span></li>
+      <li><span class="name"><span class="ja">4種のチーズピザ〜ハチミツ付〜</span><span class="en">Four-Cheese Pizza, served with Honey</span></span><span class="dots"></span><span class="price">¥1,380</span></li>
+    </ul>
+  </div>
+
+  <div class="sec" style="margin-top:14mm">
+    <div class="head"><h2>Pasta</h2><span class="h-sub">〜シェフの腕がうなる自慢の一品〜<i>The chef’s signature</i></span></div>
+    <ul class="items" style="width:112mm">
+      <li><span class="name"><span class="ja">アラビアータ 🌶🌶</span><span class="en">Arrabbiata (spicy)</span></span><span class="dots"></span><span class="price">¥980</span></li>
+      <li><span class="name"><span class="ja">揚げナスのミートパスタ</span><span class="en">Fried Eggplant &amp; Meat Sauce Pasta</span></span><span class="dots"></span><span class="price">¥1,180</span></li>
+      <li><span class="name"><span class="ja">カルボナーラ</span><span class="en">Carbonara</span></span><span class="dots"></span><span class="price">¥1,280</span></li>
+      <li><span class="name"><span class="ja">生ハムとベビーリーフ塩パスタ</span><span class="en">Cured Ham &amp; Baby Leaf Pasta, Lightly Salted</span></span><span class="dots"></span><span class="price">¥1,180</span></li>
+    </ul>
+  </div>
+
+  <div class="sec" style="margin-top:14mm">
+    <div class="head"><h2>Rice</h2></div>
+    <ul class="items" style="width:125mm">
+      <li><span class="name"><span class="ja">キーマカレーチーズ焼き</span><span class="en">Baked Keema Curry with Cheese</span></span><span class="dots"></span><span class="price">¥880</span></li>
+      <li><span class="name"><span class="ja">和牛でビーフピラフ</span><span class="en">Wagyu Beef Pilaf</span></span><span class="dots"></span><span class="price">¥1,480</span></li>
+      <li><span class="name"><span class="ja">オムライス〜トマトクリームソース〜</span><span class="en">Omurice with Tomato Cream Sauce</span></span><span class="dots"></span><span class="price">¥1,280</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 3. LUNCH ============ -->
+<section class="page">
+  <div class="title">LUNCH MENU</div>
+  <div class="bar"></div>
+  <div class="hours">11:00〜15:00（L.O. 14:00）<small>Last order 14:00</small></div>
+
+  <ol class="lunch" style="width:152mm">
+    <li><span class="num">1.</span><span><span class="ja">日替わり+MINA COCOランチ</span><span class="en">Daily +MINA COCO Lunch</span></span><span class="dots"></span><span class="price">¥2,200</span></li>
+    <li><span class="num">2.</span><span><span class="ja">お魚と彩野菜のコラボランチ</span><span class="en">Fish &amp; Colorful Vegetable Lunch</span></span><span class="dots"></span><span class="price">¥2,200</span></li>
+    <li><span class="num">3.</span><span><span class="ja">日替わりソースでハンバーグランチ</span><span class="en">Hamburg Steak Lunch with Daily Sauce</span></span><span class="dots"></span><span class="price">¥2,200</span></li>
+    <li><span class="num">4.</span><span><span class="ja">シェフ気まぐれパスタランチ</span><span class="en">Chef’s Choice Pasta Lunch</span></span><span class="dots"></span><span class="price">¥1,890</span></li>
+    <li><span class="num">5.</span><span><span class="ja">彩野菜たっぷりカレーランチ</span><span class="en">Curry Lunch with Plenty of Colorful Vegetables</span></span><span class="dots"></span><span class="price">¥1,890</span></li>
+    <li><span class="num">6.</span><span><span class="ja">国産和牛ステーキランチ</span><span class="en">Japanese Wagyu Steak Lunch</span></span><span class="dots"></span><span class="price">¥2,980</span></li>
+  </ol>
+
+  <div class="bubble">“カレー”<br>テイクアウト<br>できます！！<i>Curry available<br>for takeout!</i></div>
+
+  <div class="incl center">
+    <u>〜全てのランチに前菜/スープ/プチデザート/飲み物付き〜</u>
+    <i>All lunches come with an appetizer, soup, petit dessert and a drink.</i>
+    <u>1.2.3.6はライスorパンお選びください</u>
+    <i>For 1, 2, 3 and 6, please choose rice or bread.</i>
+  </div>
+  <div class="center" style="font-size:10pt; margin-top:2mm;"><u>※内容は日替わりになりますので別紙と照らし合わせてご覧ください</u>
+    <i class="en">Dishes change daily — please refer to the separate sheet.</i></div>
+
+  <div class="course"><span>★+MINA COCOハーフコースランチ</span><span>¥2,750</span></div>
+  <div class="course-en">+MINA COCO Half-Course Lunch</div>
+  <div class="bar peach"></div>
+  <div class="course-desc center">〜前菜・スープ・パスタ・お魚・お肉・プチデザート・飲み物〜<br>全て少しずつ食べれるおすすめのプチコースです
+    <i class="en" style="letter-spacing:.02em">Appetizer, soup, pasta, fish, meat, petit dessert and a drink —<br>a recommended petite course with a little of everything.</i></div>
+
+  <div class="sec" style="margin-top:3mm">
+    <div class="head"><h2>Set Drink</h2></div>
+    <ul class="items plain" style="width:95mm; display:grid; grid-template-columns:1fr 1fr;">
+      <li><span class="name"><span class="ja">アップル</span><span class="en">Apple Juice</span></span></li>
+      <li><span class="name"><span class="ja">ウーロン茶</span><span class="en">Oolong Tea</span></span></li>
+      <li><span class="name"><span class="ja">コーヒー（Hot/Ice）</span><span class="en">Coffee (Hot / Iced)</span></span></li>
+      <li><span class="name"><span class="ja">紅茶（Ice）</span><span class="en">Iced Tea</span></span></li>
+    </ul>
+  </div>
+
+  <ul class="opt">
+    <li><span>・パスタ大盛り<i>Large pasta</i></span><span>+¥110</span></li>
+    <li style="margin-top:1.5mm"><span>・ライス大盛り<i>Large rice</i></span><span>+¥110</span></li>
+  </ul>
+  <div style="position:absolute; right:15mm; bottom:12mm; font-size:9.5pt; text-align:right;"><u>※別料金でアルコールメニューもございます</u>
+    <i style="display:block; font-family:'Cormorant Garamond',serif; color:var(--sub); font-size:10.5pt;">Alcoholic drinks are available at an extra charge.</i></div>
+</section>
+
+<!-- ============ 4. DRINK ============ -->
+<section class="page">
+  <div class="title">DRINK MENU</div>
+  <div class="bar"></div>
+
+  <div class="cols">
+    <div>
+      <div class="sec">
+        <div class="head"><h2>Beer</h2></div>
+        <ul class="items compact">
+          <li><span class="name"><span class="ja">ハイネケン（小）</span><span class="en">Heineken (small)</span></span><span class="dots"></span><span class="price">¥650</span></li>
+          <li><span class="name"><span class="ja">サッポロラガー（中）</span><span class="en">Sapporo Lager (medium)</span></span><span class="dots"></span><span class="price">¥650</span></li>
+        </ul>
+      </div>
+      <div class="sec">
+        <div class="head"><h2>Wine</h2></div>
+        <ul class="items compact">
+          <li><span class="name"><span class="ja">グラスワイン（白/赤）</span><span class="en">Wine by the Glass (White / Red)</span></span><span class="dots"></span><span class="price">¥800</span></li>
+          <li><span class="name"><span class="ja">ボトルワイン</span><span class="en">Wine by the Bottle</span></span><span class="dots"></span><span class="price">¥2,500〜</span></li>
+        </ul>
+        <div class="note">→ワインリストございます<i>Wine list available</i></div>
+      </div>
+      <div class="sec">
+        <div class="head"><h2>Whisky</h2><span class="h-sub">〜水/お湯/炭酸割り〜</span></div>
+        <div class="note" style="margin:-1.5mm 0 1mm 3mm"><i style="margin:0">with water, hot water or soda</i></div>
+        <ul class="items compact">
+          <li><span class="name"><span class="ja">シングルモルト余市</span><span class="en">Single Malt Yoichi</span></span><span class="dots"></span><span class="price">¥700</span></li>
+          <li><span class="name"><span class="ja">オールドパー12年</span><span class="en">Old Parr 12 Years</span></span><span class="dots"></span><span class="price">¥700</span></li>
+          <li><span class="name"><span class="ja">角</span><span class="en">Suntory Kakubin</span></span><span class="dots"></span><span class="price">¥500</span></li>
+        </ul>
+      </div>
+      <div class="sec">
+        <div class="head"><h2 class="ja">焼酎</h2><span class="h-sub">Shochu 〜水/お湯/炭酸割り〜</span></div>
+        <div class="note" style="margin:-1.5mm 0 1mm 3mm"><i style="margin:0">with water, hot water or soda</i></div>
+        <ul class="items compact">
+          <li><span class="name"><span class="ja">赤兎馬（芋）</span><span class="en">Sekitoba (sweet potato)</span></span></li>
+          <li><span class="name"><span class="ja">鳥飼（米）</span><span class="en">Torikai (rice)</span></span></li>
+          <li><span class="name"><span class="ja">二階堂 吉四六（麦）</span><span class="en">Nikaido Kitchomu (barley)</span></span></li>
+        </ul>
+        <div class="all">all ¥700</div>
+      </div>
+      <div class="sec">
+        <div class="head"><h2 class="ja">日本酒</h2><span class="h-sub">Sake</span></div>
+        <ul class="items compact">
+          <li><span class="name"><span class="ja" style="white-space:nowrap">しゅわり〜にごりスパークリング〜</span><span class="en">Shuwari — Sparkling Cloudy Sake</span></span><span class="dots"></span><span class="price">¥1,200</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div>
+      <div class="sec">
+        <div class="head"><h2>Cocktail</h2></div>
+        <ul class="items plain" style="display:grid; grid-template-columns:1fr 1fr;">
+          <li><span class="name"><span class="ja">ジン</span><span class="en">Gin</span></span></li>
+          <li><span class="name"><span class="ja">ウォッカ</span><span class="en">Vodka</span></span></li>
+          <li><span class="name"><span class="ja">カンパリ</span><span class="en">Campari</span></span></li>
+          <li><span class="name"><span class="ja">カシス</span><span class="en">Cassis</span></span></li>
+          <li><span class="name"><span class="ja">ベイリーズ</span><span class="en">Baileys</span></span></li>
+          <li><span class="name"><span class="ja">プルシア</span><span class="en">Prussia</span></span></li>
+          <li><span class="name"><span class="ja">ワイン</span><span class="en">Wine</span></span></li>
+        </ul>
+        <div class="all">all ¥700</div>
+        <div class="note">→カクテルリストございます<i>Cocktail list available</i></div>
+        <ul class="items compact" style="margin-top:1.5mm">
+          <li><span class="name"><span class="ja">レモンサワー</span><span class="en">Lemon Sour</span></span><span class="dots"></span><span class="price">¥500</span></li>
+        </ul>
+      </div>
+      <div class="sec">
+        <div class="head"><h2>Non alcohol</h2></div>
+        <ul class="items compact">
+          <li><span class="name"><span class="ja">コロナ</span><span class="en">Corona (non-alcoholic)</span></span><span class="dots"></span><span class="price">¥400</span></li>
+          <li><span class="name"><span class="ja" style="white-space:nowrap">Opia〜カベルネ・ソーヴィニヨン〜</span><span class="en">Opia Cabernet Sauvignon<br>(organic, alcohol-free wine)<br>White / Red / Sparkling</span></span><span class="dots"></span><span class="price">¥2,500</span></li>
+        </ul>
+        <div class="note" style="margin-left:6mm">（オーガニックワイン）→白/赤/スパークリング</div>
+        <ul class="items plain" style="margin-top:1.5mm">
+          <li><span class="name"><span class="ja">カシス</span><span class="en">Cassis</span></span></li>
+          <li><span class="name"><span class="ja">モヒートミント</span><span class="en">Mojito Mint</span></span></li>
+          <li><span class="name"><span class="ja">グリーンアップル</span><span class="en">Green Apple</span></span></li>
+        </ul>
+        <div class="all">→ソーダ割り all ¥500 <i>with soda</i></div>
+      </div>
+      <div class="sec">
+        <div class="head"><h2>Soft drink</h2></div>
+        <ul class="items plain" style="display:grid; grid-template-columns:1fr 1fr;">
+          <li><span class="name"><span class="ja">コーラ</span><span class="en">Cola</span></span></li>
+          <li><span class="name"><span class="ja">ジンジャーエール</span><span class="en">Ginger Ale</span></span></li>
+          <li><span class="name"><span class="ja">トニックウォーター</span><span class="en">Tonic Water</span></span></li>
+          <li><span class="name"><span class="ja">アップル</span><span class="en">Apple Juice</span></span></li>
+          <li><span class="name"><span class="ja">ウーロン茶</span><span class="en">Oolong Tea</span></span></li>
+          <li><span class="name"><span class="ja">コーヒー（Hot/Ice）</span><span class="en">Coffee (Hot / Iced)</span></span></li>
+          <li><span class="name"><span class="ja">紅茶（Hot/Ice）</span><span class="en">Tea (Hot / Iced)</span></span></li>
+        </ul>
+        <div class="all">all ¥400</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. COCKTAIL ============ -->
+<section class="page">
+  <div class="title">COCKTAIL MENU</div>
+  <div class="bar"></div>
+  <div class="all" style="font-size:15pt; letter-spacing:.15em; margin-top:6mm;">All ¥700</div>
+
+  <div class="cols" style="margin-top:0">
+    <div>
+      <div class="sec">
+        <div class="head"><h2 class="gold">GIN</h2></div>
+        <ul class="items">
+          <li><span class="name"><span class="ja">ジントニック</span><span class="en">Gin &amp; Tonic</span></span></li>
+          <li><span class="name"><span class="ja">ジンバック（+ジンジャーエール）</span><span class="en">Gin Buck (+ ginger ale)</span></span></li>
+          <li><span class="name"><span class="ja">ジンフィズ（+ソーダ+レモン）</span><span class="en">Gin Fizz (+ soda, lemon)</span></span></li>
+        </ul>
+      </div>
+      <div class="sec" style="margin-top:9mm">
+        <div class="head"><h2 class="gold">VODKA</h2></div>
+        <ul class="items">
+          <li><span class="name"><span class="ja">ウォッカトニック（+トニック+レモン）</span><span class="en">Vodka Tonic (+ tonic, lemon)</span></span></li>
+          <li><span class="name"><span class="ja">ウォッカリッキー（+ソーダ+レモン）</span><span class="en">Vodka Rickey (+ soda, lemon)</span></span></li>
+          <li><span class="name"><span class="ja">モスコミュール（+ジンジャー+レモン）</span><span class="en">Moscow Mule (+ ginger, lemon)</span></span></li>
+        </ul>
+      </div>
+      <div class="sec" style="margin-top:9mm">
+        <div class="head"><h2 class="gold">CAMPARI</h2></div>
+        <ul class="items">
+          <li><span class="name"><span class="ja">カンパリソーダ</span><span class="en">Campari Soda</span></span></li>
+          <li><span class="name"><span class="ja">カンパリトニック</span><span class="en">Campari Tonic</span></span></li>
+        </ul>
+      </div>
+      <div class="sec" style="margin-top:9mm">
+        <div class="head"><h2 class="gold">CASSIS</h2></div>
+        <ul class="items">
+          <li><span class="name"><span class="ja">カシスソーダ</span><span class="en">Cassis Soda</span></span></li>
+          <li><span class="name"><span class="ja">カシスウーロン</span><span class="en">Cassis Oolong</span></span></li>
+          <li><span class="name"><span class="ja">カシスミルク</span><span class="en">Cassis Milk</span></span></li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="sec">
+        <div class="head"><h2 class="gold">WINE</h2></div>
+        <div style="font-weight:700; margin:1mm 0 .5mm;">《赤ワイン》<i style="font-family:'Cormorant Garamond',serif; font-weight:500; color:var(--sub); margin-left:2mm;">Red Wine</i></div>
+        <ul class="items">
+          <li><span class="name"><span class="ja">キティー（+ジンジャー）</span><span class="en">Kitty (+ ginger ale)</span></span></li>
+          <li><span class="name"><span class="ja">カーディナル（+カシス）</span><span class="en">Cardinal (+ cassis)</span></span></li>
+          <li><span class="name"><span class="ja">カリモーチョ（+コーラ）</span><span class="en">Kalimotxo (+ cola)</span></span></li>
+          <li><span class="name"><span class="ja">レッドスプリッツァー（+ソーダ）</span><span class="en">Red Spritzer (+ soda)</span></span></li>
+        </ul>
+        <div style="font-weight:700; margin:5mm 0 .5mm;">《白ワイン》<i style="font-family:'Cormorant Garamond',serif; font-weight:500; color:var(--sub); margin-left:2mm;">White Wine</i></div>
+        <ul class="items">
+          <li><span class="name"><span class="ja">オペレーター（+ジンジャー）</span><span class="en">Operator (+ ginger ale)</span></span></li>
+          <li><span class="name"><span class="ja">スプリッツァー（+ソーダ+レモン）</span><span class="en">Spritzer (+ soda, lemon)</span></span></li>
+          <li><span class="name"><span class="ja">キール（+カシス）</span><span class="en">Kir (+ cassis)</span></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. 飲み放題 ============ -->
+<section class="page">
+  <div class="nomi-head"><div class="nomi-title">飲み放題</div></div>
+  <div class="line" style="width:55%"></div>
+  <div class="nomi-head" style="margin-top:4mm;">
+    <div class="title" style="font-size:34pt; text-align:left; padding-left:30mm;">DRINK MENU</div>
+    <div class="nomi-price">〜120分〜 ¥2,750<i>All-you-can-drink, 120 min</i></div>
+  </div>
+  <div class="line" style="margin-left:22mm"></div>
+
+  <div class="cols" style="margin-top:7mm">
+    <div>
+      <span class="kind al">Alcohol</span>
+      <div class="sec">
+        <div class="head"><h2>Beer</h2></div>
+        <ul class="items plain">
+          <li><span class="name"><span class="ja">ハイネケン（小）</span><span class="en">Heineken (small)</span></span></li>
+          <li><span class="name"><span class="ja">サッポロラガー（中）</span><span class="en">Sapporo Lager (medium)</span></span></li>
+        </ul>
+      </div>
+      <div class="sec">
+        <div class="head"><h2>Wine</h2></div>
+        <ul class="items plain">
+          <li><span class="name"><span class="ja">グラスワイン（白/赤）</span><span class="en">Wine by the Glass (White / Red)</span></span></li>
+        </ul>
+      </div>
+      <div class="sec">
+        <div class="head"><h2 class="ja">焼酎</h2><span class="h-sub">Shochu 〜水/お湯/炭酸割り〜</span></div>
+        <ul class="items plain">
+          <li><span class="name"><span class="ja">米</span><span class="en">Rice shochu</span></span></li>
+          <li><span class="name"><span class="ja">芋</span><span class="en">Sweet potato shochu</span></span></li>
+        </ul>
+      </div>
+      <div class="sec">
+        <div class="head"><h2>Whisky</h2><span class="h-sub">〜水/お湯/炭酸割り〜</span></div>
+        <ul class="items plain">
+          <li><span class="name"><span class="ja">角</span><span class="en">Suntory Kakubin</span></span></li>
+        </ul>
+      </div>
+      <div class="sec">
+        <div class="head"><h2>Cocktail</h2></div>
+        <ul class="items plain" style="display:grid; grid-template-columns:1fr 1fr;">
+          <li><span class="name"><span class="ja">ジン</span><span class="en">Gin</span></span></li>
+          <li><span class="name"><span class="ja">ウォッカ</span><span class="en">Vodka</span></span></li>
+          <li><span class="name"><span class="ja">カンパリ</span><span class="en">Campari</span></span></li>
+          <li><span class="name"><span class="ja">カシス</span><span class="en">Cassis</span></span></li>
+          <li><span class="name"><span class="ja">ベイリーズ</span><span class="en">Baileys</span></span></li>
+          <li><span class="name"><span class="ja">プルシア</span><span class="en">Prussia</span></span></li>
+          <li><span class="name"><span class="ja">ワイン</span><span class="en">Wine</span></span></li>
+          <li><span class="name"><span class="ja">レモンサワー</span><span class="en">Lemon Sour</span></span></li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <span class="kind na">Non alcohol</span>
+      <div class="sec">
+        <div class="head"><h2>Beer</h2></div>
+        <ul class="items plain">
+          <li><span class="name"><span class="ja">コロナ</span><span class="en">Corona (non-alcoholic)</span></span></li>
+        </ul>
+      </div>
+      <div class="sec">
+        <div class="head"><h2>Cocktail</h2><span class="h-sub">〜炭酸割り〜<i>with soda</i></span></div>
+        <ul class="items plain">
+          <li><span class="name"><span class="ja">カシス</span><span class="en">Cassis</span></span></li>
+          <li><span class="name"><span class="ja">モヒートミント</span><span class="en">Mojito Mint</span></span></li>
+          <li><span class="name"><span class="ja">グリーンアップル</span><span class="en">Green Apple</span></span></li>
+        </ul>
+      </div>
+      <div class="sec">
+        <div class="head"><h2>Soft drink</h2></div>
+        <ul class="items plain">
+          <li><span class="name"><span class="ja">コーラ</span><span class="en">Cola</span></span></li>
+          <li><span class="name"><span class="ja">ジンジャーエール</span><span class="en">Ginger Ale</span></span></li>
+          <li><span class="name"><span class="ja">トニックウォーター</span><span class="en">Tonic Water</span></span></li>
+          <li><span class="name"><span class="ja">アップル</span><span class="en">Apple Juice</span></span></li>
+          <li><span class="name"><span class="ja">ウーロン茶</span><span class="en">Oolong Tea</span></span></li>
+          <li><span class="name"><span class="ja">コーヒー（Hot/Ice）</span><span class="en">Coffee (Hot / Iced)</span></span></li>
+          <li><span class="name"><span class="ja">紅茶（Hot/Ice）</span><span class="en">Tea (Hot / Iced)</span></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
