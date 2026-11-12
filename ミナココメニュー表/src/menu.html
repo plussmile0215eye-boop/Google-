@@ -168,6 +168,12 @@
   ol.lunch-center li { display:block; text-align:center; }
   ol.lunch-center .num { display:inline; width:auto; margin-right:2mm; font-size:12.5pt; }
   ol.lunch-center li > span:not(.num) { display:inline; }
+
+  /* unified price color */
+  :root { --price:#6b4a32; }
+  .s-list .pr, .s-list li.rec .pr, ul.items .price, ul.items li.rec .price,
+  ol.lunch .price, ol.lunch li.rec .price, .all, .cprice, .pc { color:var(--price) !important; }
+  .all i { color:var(--sub) !important; }
 </style>
 </head>
 <body>
@@ -272,8 +278,8 @@
   </div>
 
   <ul class="opt">
-    <li><span>・パスタ大盛り<i>Large pasta</i></span><span>+¥220</span></li>
-    <li style="margin-top:1.5mm"><span>・ライス大盛り<i>Large rice</i></span><span>+¥220</span></li>
+    <li><span>・パスタ大盛り<i>Large pasta</i></span><span class="pc">+¥220</span></li>
+    <li style="margin-top:1.5mm"><span>・ライス大盛り<i>Large rice</i></span><span class="pc">+¥220</span></li>
   </ul>
   <div style="position:absolute; right:15mm; bottom:12mm; font-size:9.5pt; text-align:right;"><u>※別料金でアルコールメニューもございます</u>
     <i style="display:block; font-family:'Cormorant Garamond',serif; color:var(--sub); font-size:10.5pt;">Alcoholic drinks are available at an extra charge.</i></div>
@@ -449,7 +455,7 @@
   <div class="line" style="width:55%"></div>
   <div class="nomi-head" style="margin-top:4mm;">
     <div class="title" style="font-size:34pt; text-align:left; padding-left:30mm;">DRINK MENU</div>
-    <div class="nomi-price">〜120分〜 ¥2,750<i>All-you-can-drink, 120 min</i></div>
+    <div class="nomi-price">〜120分〜 <span class="pc">¥2,750</span><i>All-you-can-drink, 120 min</i></div>
   </div>
   <div class="line" style="margin-left:22mm"></div>
 
