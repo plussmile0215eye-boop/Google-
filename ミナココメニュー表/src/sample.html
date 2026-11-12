@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>+MINA COCO メニュー</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@500;600&family=Noto+Color+Emoji&family=Shippori+Mincho+B1:wght@500;700;800&display=block">
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1d1a17;
+    --sub: #7a6d62;
+    --rule: #8a6f5e;
+    --gold: #a88a5a;
+    --peach: #f2b48f;
+    --paper: #f3f2ee;
+  }
+  body { font-family: "Noto Sans JP", "Noto Color Emoji", sans-serif; color: var(--ink); background: #f3f2ee; }
+  .page {
+    width: 210mm; height: 297mm; overflow: hidden; position: relative;
+    background: var(--paper);
+    background-image: radial-gradient(rgba(0,0,0,.025) 1px, transparent 1px);
+    background-size: 3px 3px;
+    padding: 15mm 15mm 12mm;
+    page-break-after: always;
+  }
+  .page:last-child { page-break-after: auto; }
+
+  /* header */
+  .title { text-align: center; font-family: "Montserrat", sans-serif; font-weight: 500;
+    font-size: 34pt; letter-spacing: .08em; line-height: 1; }
+  .title-ja { text-align: center; font-size: 10pt; letter-spacing: .3em; color: var(--sub); margin-top: 2.5mm; }
+  .bar { position: relative; height: 2px; background: var(--rule); margin: 4mm auto 0; width: 62%; }
+  .bar::before, .bar::after { content: ""; position: absolute; top: -4px; width: 9px; height: 9px;
+    background: var(--rule); transform: rotate(45deg); }
+  .bar::before { left: -4px; } .bar::after { right: -4px; }
+  .hours { text-align: center; font-size: 10.5pt; letter-spacing: .35em; margin-top: 3.5mm; }
+  .hours small { display: block; font-family: "Cormorant Garamond", serif; font-style: italic;
+    letter-spacing: .08em; font-size: 10.5pt; color: var(--sub); margin-top: .5mm; }
+
+  /* sections */
+  h2 { font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 19pt; letter-spacing: .14em;
+    display: inline-block; border-bottom: 2px solid var(--ink); line-height: 1.15; padding-bottom: .5mm; }
+  .ja-h { font-family:"Noto Sans JP"; font-weight:700; letter-spacing:.05em; }
+  h2.ja { font-family: "Noto Sans JP"; font-weight: 700; letter-spacing: .1em; }
+  h2.gold { color: var(--gold); border-color: var(--gold); }
+  .h-sub { font-size: 9.5pt; margin-left: 3mm; color: var(--ink); }
+  .h-sub i { font-family: "Cormorant Garamond", serif; color: var(--sub); margin-left: 1.5mm; font-size: 10.5pt; }
+  .sec { margin-top: 4.5mm; }
+  .sec > .head { margin-bottom: 2.5mm; }
+
+  ul.items { list-style: none; }
+  ul.items li { display: flex; align-items: baseline; gap: 2mm; padding: 1.15mm 0 1.15mm 3mm; }
+  ul.items .name { flex: 0 1 auto; }
+  ul.items .name .ja { font-size: 12.5pt; line-height: 1.3; }
+  ul.items .name .ja::before { content: "・"; margin-left: -3mm; }
+  ul.items .name .en { display: block; font-family: "Cormorant Garamond", serif; font-style: italic;
+    font-size: 11pt; color: var(--sub); line-height: 1.05; }
+  ul.items .dots { flex: 1 1 auto; border-bottom: 1.5px dotted #bfb3a8; transform: translateY(-1.5mm); min-width: 6mm; }
+  ul.items .price { font-size: 11.5pt; white-space: nowrap; font-weight: 500; }
+  ul.items.compact li { padding: .25mm 0 .25mm 3mm; }
+  ul.items.plain li { padding: .6mm 0 .6mm 3mm; }
+  .all { font-size: 11pt; font-weight: 500; text-align: right; margin-top: 1mm; }
+  .all i { font-family: "Cormorant Garamond", serif; color: var(--sub); }
+  .note { font-size: 9pt; color: var(--ink); margin: .5mm 0 0 6mm; }
+  .note i { font-family: "Cormorant Garamond", serif; color: var(--sub); font-size: 10pt; margin-left: 1mm; }
+
+  .photo { position: absolute; }
+
+  .box { position: absolute; border: 2.5px dashed #c3b08f; border-radius: 6mm; padding: 3.5mm 4mm; text-align: center; background: rgba(255,255,255,.35); }
+  .box b { display: block; white-space: nowrap; font-size: 11pt; line-height: 1.45; }
+  .box .en { font-family: "Cormorant Garamond", serif; font-style: italic; color: var(--sub); font-size: 10.5pt; line-height: 1.2; }
+  .box p { white-space: nowrap; font-size: 8pt; line-height: 1.5; margin-top: 1.5mm; }
+
+  .daily { position: absolute; right: 15mm; top: 47mm; text-align: right; font-size: 10.5pt;
+    border-bottom: 2px dashed var(--rule); padding-bottom: 1mm; }
+  .daily i { display: block; font-family: "Cormorant Garamond", serif; color: var(--sub); font-size: 10.5pt; }
+
+  /* lunch */
+  ol.lunch { list-style: none; margin-top: 7mm; }
+  ol.lunch li { display: flex; align-items: baseline; gap: 2mm; padding: 1.4mm 0; }
+  ol.lunch .num { font-family: "Montserrat"; font-weight: 600; font-size: 14pt; width: 9mm; }
+  ol.lunch .ja { font-size: 14pt; letter-spacing: .12em; }
+  ol.lunch .en { display: block; font-family: "Cormorant Garamond", serif; font-style: italic; color: var(--sub); font-size: 12pt; letter-spacing: .02em; }
+  ol.lunch .price { font-size: 14pt; letter-spacing: .08em; white-space: nowrap; font-weight: 500; }
+  ol.lunch .dots { flex: 1; border-bottom: 1.5px dotted #bfb3a8; transform: translateY(-2mm); }
+  .bubble { position: absolute; right: 8mm; top: 100mm; width: 30mm; height: 30mm; border-radius: 50%;
+    background: var(--peach); display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; font-size: 9pt; line-height: 1.45; }
+  .bubble i { font-family: "Cormorant Garamond", serif; font-size: 9.5pt; line-height: 1.1; margin-top: 1mm; color: #5c4a3e; }
+  .center { text-align: center; }
+  .incl { margin-top: 4mm; font-weight: 700; font-size: 12.5pt; line-height: 1.55; }
+  .incl u { text-underline-offset: 3px; }
+  .incl i, .center i.en { display: block; font-family: "Cormorant Garamond", serif; font-weight: 500; color: var(--sub); font-size: 11pt; line-height: 1.25; margin-bottom: 1.5mm; }
+  .course { margin-top: 3mm; display: flex; justify-content: space-between; align-items: baseline;
+    font-weight: 700; font-size: 17pt; letter-spacing: .1em; padding: 0 1mm; }
+  .course-en { font-family: "Cormorant Garamond", serif; font-style: italic; color: var(--sub); font-size: 12pt; padding-left: 9mm; margin-top: -.5mm; }
+  .bar.peach { background: var(--peach); width: 100%; margin-top: 2.5mm; }
+  .bar.peach::before, .bar.peach::after { background: var(--paper); border: 2px solid var(--peach); }
+  .course-desc { font-size: 10.5pt; letter-spacing: .2em; line-height: 1.6; margin-top: 3mm; }
+  .opt { position: absolute; right: 15mm; bottom: 28mm; border: 2px dashed #ee9a68; border-radius: 4mm; padding: 3mm 5mm; }
+  .opt li { list-style: none; font-weight: 700; font-size: 11.5pt; letter-spacing: .1em; display: flex; justify-content: space-between; gap: 6mm; }
+  .opt li i { font-family: "Cormorant Garamond", serif; font-weight: 500; color: var(--sub); font-size: 10.5pt; letter-spacing: 0; display: block; }
+
+  /* drinks two-column */
+  .cols { display: grid; grid-template-columns: 1fr 1fr; column-gap: 9mm; margin-top: 4mm; }
+  .cols .sec { margin-top: 2.5mm; }
+  .cols ul.items .name .ja { font-size: 12pt; }
+  .cols ul.items .price, .cols .all { font-size: 11pt; }
+  .cols ul.items .name .en { font-size: 10.5pt; }
+
+  .nomi-head { display: flex; align-items: baseline; justify-content: space-between; }
+  .nomi-title { font-size: 34pt; font-weight: 700; letter-spacing: .12em; }
+  .nomi-price { text-align: right; font-size: 15pt; font-weight: 500; }
+  .nomi-price i { display: block; font-family: "Cormorant Garamond", serif; color: var(--sub); font-size: 12pt; }
+  .line { height: 2px; background: #b5a59a; margin-top: 2mm; }
+  .kind { font-family: "Montserrat"; font-size: 17pt; font-weight: 600; letter-spacing: .12em; display: inline-block; border-bottom: 2px solid; }
+  .kind.al { color: #e46bb3; } .kind.na { color: #23a565; }
+  .footer { position: absolute; left: 0; right: 0; bottom: 8mm; text-align: center; font-family: "Cormorant Garamond", serif;
+    font-size: 10pt; letter-spacing: .3em; color: var(--sub); }
+  .tax { position: absolute; right: 15mm; bottom: 8mm; font-size: 8pt; color: var(--sub); }
+
+  .course-row { display:flex; justify-content:space-between; align-items:baseline; }
+  .cprice { font-size:16pt; font-weight:700; letter-spacing:.06em; }
+  .course-en2 { font-family:"Cormorant Garamond",serif; font-style:italic; color:var(--sub); font-size:11pt; margin:.3mm 0 .6mm; }
+  .course-row + ul, .course-row + .cnote + ul { margin-top:2mm; }
+  .course-row h2 { font-size:16pt; }
+  .cnote { position:absolute; right:0; top:16mm; width:52mm; text-align:center; color:#d9883e; font-size:9.5pt; line-height:1.5;
+    border:2px dashed #ee9a68; border-radius:4mm; padding:2.5mm 2mm; }
+  .cnote b { font-size:11pt; }
+  .cnote i { display:block; font-family:"Cormorant Garamond",serif; font-size:10pt; line-height:1.2; margin-top:1mm; color:#b9763a; }
+
+  .s-list { list-style:none; }
+  .s-list li { padding:.35mm 0; }
+  .s-list .ja { font-family:"Shippori Mincho B1", serif; font-weight:700; font-size:13pt; letter-spacing:.02em; line-height:1.3; }
+  .s-list .pr { font-family:"Noto Sans JP"; font-weight:400; font-size:11pt; color:var(--sub); margin-left:3mm; letter-spacing:.05em; }
+  .s-list .en { display:block; font-family:"Cormorant Garamond", serif; font-style:italic; font-size:11pt; color:#9a8d82; line-height:1.05; }
+  .s-list li.rec { background:#fbf1e7; border-left:3px solid #d9883e; padding:1.2mm 3mm; margin:.8mm 0 .8mm -3mm; border-radius:0 2mm 2mm 0; }
+  .s-list li.rec .ja { font-size:15pt; color:#5a3a22; font-weight:800; }
+  .s-list li.rec .pr { font-size:12pt; color:#5a3a22; font-weight:500; }
+  .badge { white-space:nowrap; flex:none; display:inline-block; font-family:"Noto Sans JP"; font-weight:700; font-size:7.5pt; color:#fff; background:#d9883e;
+    border-radius:10mm; padding:.3mm 2.2mm; margin-right:2mm; vertical-align:3px; letter-spacing:.08em; }
+  .badge.chef { background:#5a3a22; }
+
+  .p1 .sec { margin-top:3mm; } .p2 .sec { margin-top:9mm; } .p1 .sec > .head { margin-bottom:1.5mm; } .p1 .sec h2 { font-size:16pt; }
+  /* all pages: mincho names, quiet prices, no leaders */
+  ul.items .name .ja, ol.lunch .ja { font-family:"Shippori Mincho B1", serif; font-weight:700; }
+  ul.items .name .ja::before { content:none; }
+  ul.items li { padding-left:0; }
+  ul.items.compact li, ul.items.plain li { padding-left:0; }
+  ul.items .dots, ol.lunch .dots { display:none; }
+  ul.items .price { font-size:11pt; font-weight:400; color:var(--sub); margin-left:3mm; white-space:nowrap; }
+  ol.lunch .price { font-size:11.5pt; font-weight:400; color:var(--sub); margin-left:2mm; letter-spacing:.04em; }
+  ol.lunch .ja { letter-spacing:.06em; }
+  ul.items .name .en { color:#9a8d82; }
+  ul.items li.rec { background:#fbf1e7; border-left:3px solid #d9883e; padding:1.2mm 3mm; margin:.8mm 0 .8mm -3mm; border-radius:0 2mm 2mm 0; }
+  ul.items li.rec .ja { font-size:14pt; color:#5a3a22; font-weight:800; }
+  ul.items li.rec .price { font-size:11pt; color:#5a3a22; font-weight:500; }
+  ol.lunch li.rec { background:#fbf1e7; border-left:3px solid #d9883e; padding:1.4mm 2mm 1.4mm 3mm; margin-left:-3mm; border-radius:0 2mm 2mm 0; }
+  ol.lunch li.rec .ja { color:#5a3a22; font-weight:800; }
+  ol.lunch li.rec .price { color:#5a3a22; font-weight:500; }
+  .cprice { font-family:"Noto Sans JP"; }
+  .cols ul.items li.rec { display:block; }
+  .cols ul.items li.rec .badge { display:table; margin-bottom:1mm; }
+  .cols ul.items li.rec .ja { font-size:12pt; white-space:nowrap; letter-spacing:0; }
+  .cols ul.items li.rec .price { font-size:10.5pt; }
+  .course-row h2, .p7 ul.items .name .ja { }
+  ol.lunch-center li { display:block; text-align:center; }
+  ol.lunch-center .num { display:inline; width:auto; margin-right:2mm; font-size:12.5pt; }
+  ol.lunch-center li > span:not(.num) { display:inline; }
+
+  /* unified price color */
+  :root { --price:#6b4a32; }
+  .s-list .pr, .s-list li.rec .pr, ul.items .price, ul.items li.rec .price,
+  ol.lunch .price, ol.lunch li.rec .price, .all, .cprice, .pc { color:var(--price) !important; }
+  .all i { color:var(--sub) !important; }
+
+  /* lunch: larger text */
+  ol.lunch .ja { font-size:16pt; }
+  ol.lunch-center .num { font-size:14pt; }
+  ol.lunch .price { font-size:13pt; }
+  ol.lunch .en { font-size:13pt; }
+  ol.lunch li { padding:1.1mm 0; }
+  ol.lunch { margin-top:5mm; }
+  .incl { font-size:13.5pt; margin-top:3mm; }
+  .incl i, .center i.en { font-size:12pt; margin-bottom:1mm; }
+  .course-en { font-size:13pt; }
+  .course-desc { font-size:11.5pt; letter-spacing:.15em; margin-top:2mm; }
+  .opt li { font-size:12.5pt; }
+  .opt li i { font-size:11.5pt; }
+
+  /* lunch tweak 2 */
+  ol.lunch .ja { font-size:18pt; }
+  ol.lunch-center .num { font-size:15pt; }
+  ol.lunch .price { font-size:14.5pt; }
+  ol.lunch .en { font-size:13.5pt; }
+  .incl { font-size:11.5pt; }
+  .incl i, .center i.en { font-size:10.5pt; }
+
+  .desc { display:block; font-family:"Noto Sans JP"; font-size:9pt; color:#6b5a4c; line-height:1.35; margin-top:.3mm; }
+  .pair { display:inline-block; margin-left:2mm; font-size:7.5pt; font-weight:700; color:#a0522d; border:1px solid #c98a5a; border-radius:10mm; padding:0 2mm; line-height:1.5; vertical-align:1px; }
+  .p1 .s-list li { padding:.2mm 0; }
+  .p1 .s-list li.rec { padding:1mm 3mm; margin:.5mm 0 .5mm -3mm; }
+  .p1 .sec { margin-top:2mm; }
+
+  .p1 .s-list .ja { font-size:12.5pt; line-height:1.25; }
+  .p1 .s-list .en { font-size:10pt; line-height:1.0; }
+  .p1 .s-list li.rec .ja { font-size:14pt; }
+  .desc { font-size:8.5pt; line-height:1.3; }
+  .p1 .sec > .head { margin-bottom:1mm; }
+  .p1 .title { font-size:30pt; }
+  .p1 .bar { margin-top:3mm; }
+  .p1 .hours { margin-top:2.5mm; }
+</style>
+</head>
+<body>
+<section class="page p1" style="padding-top:9mm">
+  <div class="title">DINNER MENU</div>
+  <div class="bar"></div>
+  <div class="hours">17:00〜23:00（L.O. 22:00）<small>Last order 22:00</small></div>
+  <div class="daily" style="top:36mm">※別紙に日替わりメニューもございます<i>Daily specials are on a separate sheet</i></div>
+
+  <div class="sec" style="margin-top:5mm; position:relative; padding-left:48mm;">
+    <img class="photo" src="ham.png" style="left:0; top:26mm; width:40mm; height:40mm;" alt="">
+    <div class="box" style="left:0; top:80mm; width:42mm; padding:1.8mm 1.5mm;">
+      <b style="font-size:10.5pt; white-space:normal;">ディナーメニュー<br>テイクアウト<br>できます！！</b>
+      <div class="en" style="font-size:10pt;">Dinner menu available<br>for takeout!</div>
+      <p style="white-space:normal; font-size:8pt; line-height:1.45;">※お時間をいただく場合が<br>ございますので<br>お早めにご注文ください</p>
+      <div class="en" style="font-size:9pt;">Please order early.</div>
+    </div>
+    <div class="head"><h2>À la carte</h2></div>
+    <ul class="s-list"><li class="rec"><span class="badge">おすすめ</span><span class="ja">インカの目覚めポテトフライ</span><span class="pr">¥680</span><span class="en">“Inca no Mezame” Golden Potato Fries</span><span class="desc">ほっくり甘いじゃがいもを、外はカリッと揚げて</span></li><li class="rec"><span class="badge">おすすめ</span><span class="ja">+MINA COCOサラダ</span><span class="pr">¥880</span><span class="en">+MINA COCO Salad</span><span class="desc">シャキシャキ野菜をたっぷり。最初の一皿に</span></li><li><span class="ja">季節のフルーツとスペイン産生ハム</span><span class="pr">¥1,080</span><span class="en">Seasonal Fruit with Spanish Cured Ham</span><span class="desc">生ハムの塩気とフルーツの甘みが好相性<span class="pair">白ワインと一緒に</span></span></li><li><span class="ja">王様トマトカルパッチョ</span><span class="pr">¥480</span><span class="en">“King Tomato” Carpaccio</span></li><li><span class="ja">クリームチーズとたいわたの酒盗ディップ</span><span class="pr">¥580</span><span class="en">Cream Cheese Dip with Salted Sea Bream Innards</span></li><li><span class="ja">本日のアヒージョ〜バゲット付〜</span><span class="pr">¥1,080</span><span class="en">Today’s Ajillo, served with Baguette</span><span class="desc">ぐつぐつのオイルに、バゲットをひたして<span class="pair">シェアにおすすめ</span></span></li><li><span class="ja">季節野菜のグリル〜バーニャカウダーソース〜</span><span class="pr">¥980</span><span class="en">Grilled Seasonal Vegetables with Bagna Cauda Sauce</span></li><li><span class="ja">ナスのミートグラタン</span><span class="pr">¥780</span><span class="en">Eggplant &amp; Meat Sauce Gratin</span></li><li><span class="ja">とろとろチーズオムレツ</span><span class="pr">¥780</span><span class="en">Melty Cheese Omelette</span><span class="desc">ナイフを入れると、チーズがとろり</span></li><li><span class="ja">ポテトフライ</span><span class="pr">¥450</span><span class="en">French Fries</span></li><li><span class="ja">ガーリックトースト</span><span class="pr">¥450</span><span class="en">Garlic Toast</span></li></ul>
+  </div>
+  <div class="sec" style="position:relative; padding-left:48mm;">
+    <img class="photo" src="steak.png" style="left:0; top:22mm; width:40mm; height:40mm;" alt="">
+    <div class="head"><h2>Meat</h2></div>
+    <ul class="s-list"><li class="rec"><span class="badge chef">シェフおすすめ</span><span class="ja">和牛ステーキ〜ジャポネソース〜</span><span class="pr">¥2,880</span><span class="en">Wagyu Steak with Japonaise Sauce</span><span class="desc">香ばしく焼いた和牛を、和風のジャポネソースで<span class="pair">赤ワインと一緒に</span></span></li><li><span class="ja">和牛のタリアータ〜バルサミコソース〜</span><span class="pr">¥2,880</span><span class="en">Wagyu Tagliata with Balsamic Sauce</span></li><li><span class="ja">氷温熟成阿蘇美豚の蒸し焼き〜季節のソース〜</span><span class="pr">¥1,480</span><span class="en">Braised Ice-Aged “Aso Bibuta” Pork with Seasonal Sauce</span></li><li><span class="ja">馬刺しカルビのカルパッチョ</span><span class="pr">¥1,180</span><span class="en">Raw Horse Rib (Basashi) Carpaccio</span><span class="desc">とろける脂の甘みを、さっぱりと</span></li><li><span class="ja">和牛タタキ 彩り仕立て</span><span class="pr">¥1,080</span><span class="en">Lightly Seared Wagyu Tataki, Colorfully Plated</span></li><li><span class="ja">若鶏モモの小悪魔風</span><span class="pr">¥980</span><span class="en">Chicken Thigh “Diavola” Style</span></li><li><span class="ja">白ワイン仕込みのチーズ唐揚げ</span><span class="pr">¥780</span><span class="en">White Wine–Marinated Cheese Fried Chicken</span></li><li><span class="ja">カリカリ豚足</span><span class="pr">¥600</span><span class="en">Crispy Pig’s Feet</span></li></ul>
+  </div>
+</section>
+</body></html>
