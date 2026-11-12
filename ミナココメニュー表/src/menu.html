@@ -21,7 +21,7 @@
     background: var(--paper);
     background-image: radial-gradient(rgba(0,0,0,.025) 1px, transparent 1px);
     background-size: 3px 3px;
-    padding: 15mm 15mm 12mm;
+    padding: 11mm 10mm 9mm;
     page-break-after: always;
   }
   .page:last-child { page-break-after: auto; }
@@ -72,7 +72,7 @@
   .box .en { font-family: "Cormorant Garamond", serif; font-style: italic; color: var(--sub); font-size: 10.5pt; line-height: 1.2; }
   .box p { white-space: nowrap; font-size: 8pt; line-height: 1.5; margin-top: 1.5mm; }
 
-  .daily { position: absolute; right: 15mm; top: 47mm; text-align: right; font-size: 10.5pt;
+  .daily { position: absolute; right: 10mm; top: 47mm; text-align: right; font-size: 10.5pt;
     border-bottom: 2px dashed var(--rule); padding-bottom: 1mm; }
   .daily i { display: block; font-family: "Cormorant Garamond", serif; color: var(--sub); font-size: 10.5pt; }
 
@@ -84,7 +84,7 @@
   ol.lunch .en { display: block; font-family: "Cormorant Garamond", serif; font-style: italic; color: var(--sub); font-size: 12pt; letter-spacing: .02em; }
   ol.lunch .price { font-size: 14pt; letter-spacing: .08em; white-space: nowrap; font-weight: 500; }
   ol.lunch .dots { flex: 1; border-bottom: 1.5px dotted #bfb3a8; transform: translateY(-2mm); }
-  .bubble { position: absolute; right: 8mm; top: 100mm; width: 30mm; height: 30mm; border-radius: 50%;
+  .bubble { position: absolute; right: 4mm; top: 92mm; width: 28mm; height: 28mm; border-radius: 50%;
     background: var(--peach); display: flex; flex-direction: column; align-items: center; justify-content: center;
     text-align: center; font-size: 9pt; line-height: 1.45; }
   .bubble i { font-family: "Cormorant Garamond", serif; font-size: 9.5pt; line-height: 1.1; margin-top: 1mm; color: #5c4a3e; }
@@ -98,7 +98,7 @@
   .bar.peach { background: var(--peach); width: 100%; margin-top: 2.5mm; }
   .bar.peach::before, .bar.peach::after { background: var(--paper); border: 2px solid var(--peach); }
   .course-desc { font-size: 10.5pt; letter-spacing: .2em; line-height: 1.6; margin-top: 3mm; }
-  .opt { position: absolute; right: 15mm; bottom: 28mm; border: 2px dashed #ee9a68; border-radius: 4mm; padding: 3mm 5mm; }
+  .opt { position: absolute; right: 10mm; bottom: 28mm; border: 2px dashed #ee9a68; border-radius: 4mm; padding: 3mm 5mm; }
   .opt li { list-style: none; font-weight: 700; font-size: 11.5pt; letter-spacing: .1em; display: flex; justify-content: space-between; gap: 6mm; }
   .opt li i { font-family: "Cormorant Garamond", serif; font-weight: 500; color: var(--sub); font-size: 10.5pt; letter-spacing: 0; display: block; }
 
@@ -118,7 +118,7 @@
   .kind.al { color: #e46bb3; } .kind.na { color: #23a565; }
   .footer { position: absolute; left: 0; right: 0; bottom: 8mm; text-align: center; font-family: "Cormorant Garamond", serif;
     font-size: 10pt; letter-spacing: .3em; color: var(--sub); }
-  .tax { position: absolute; right: 15mm; bottom: 8mm; font-size: 8pt; color: var(--sub); }
+  .tax { position: absolute; right: 10mm; bottom: 8mm; font-size: 8pt; color: var(--sub); }
 
   .course-row { display:flex; justify-content:space-between; align-items:baseline; }
   .cprice { font-size:16pt; font-weight:700; letter-spacing:.06em; }
@@ -213,11 +213,11 @@
 <body>
 
 <!-- ============ 1. DINNER (à la carte / fish / meat) ============ -->
-<section class="page p1" style="padding-top:12mm">
+<section class="page p1" style="padding-top:9mm">
   <div class="title">DINNER MENU</div>
   <div class="bar"></div>
   <div class="hours">17:00〜23:00（L.O. 22:00）<small>Last order 22:00</small></div>
-  <div class="daily" style="top:44mm">※別紙に日替わりメニューもございます<i>Daily specials are on a separate sheet</i></div>
+  <div class="daily" style="top:38mm">※別紙に日替わりメニューもございます<i>Daily specials are on a separate sheet</i></div>
 
   <div class="sec" style="margin-top:7mm; position:relative; padding-left:48mm;">
     <img class="photo" src="ham.png" style="left:0; top:26mm; width:40mm; height:40mm;" alt="">
@@ -301,7 +301,8 @@
   <div class="course-desc center">〜前菜・スープ・パスタ・お魚・お肉・デザート・飲み物〜<br>全て少しずつ食べれるおすすめのプチコースです
     <i class="en" style="letter-spacing:.02em">Appetizer, soup, pasta, fish, meat, dessert and a drink —<br>a recommended petite course with a little of everything.</i></div>
 
-  <div class="sec" style="margin-top:3mm">
+  <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-top:3mm;">
+  <div class="sec" style="margin-top:0">
     <div class="head"><h2>Set Drink</h2></div>
     <ul class="items plain" style="width:95mm; display:grid; grid-template-columns:1fr 1fr;">
       <li><span class="name"><span class="ja">アップル</span><span class="en">Apple Juice</span></span></li>
@@ -310,13 +311,15 @@
       <li><span class="name"><span class="ja">紅茶（Ice）</span><span class="en">Iced Tea</span></span></li>
     </ul>
   </div>
-
-  <ul class="opt">
+  <div style="margin-top:4mm;">
+  <ul class="opt" style="position:static;">
     <li><span>・パスタ大盛り<i>Large pasta</i></span><span class="pc">+¥220</span></li>
     <li style="margin-top:1.5mm"><span>・ライス大盛り<i>Large rice</i></span><span class="pc">+¥220</span></li>
   </ul>
-  <div style="position:absolute; right:15mm; bottom:12mm; font-size:9.5pt; text-align:right;"><u>※別料金でアルコールメニューもございます</u>
+  <div style="font-size:9.5pt; text-align:right; margin-top:4mm;"><u>※別料金でアルコールメニューもございます</u>
     <i style="display:block; font-family:'Cormorant Garamond',serif; color:var(--sub); font-size:10.5pt;">Alcoholic drinks are available at an extra charge.</i></div>
+  </div>
+  </div>
 </section>
 
 <!-- ============ 4. DRINK ============ -->
@@ -570,7 +573,7 @@
 </section>
 
 <!-- ============ 7. COURSE ============ -->
-<section class="page" style="padding-top:11mm">
+<section class="page" style="padding-top:8mm">
   <div class="title">COURSE MENU</div>
   <div class="bar"></div>
   <div class="hours" style="letter-spacing:.15em">コースメニューもございます。お気軽にお問い合わせください<small>Course menus are available — please ask our staff.</small></div>
