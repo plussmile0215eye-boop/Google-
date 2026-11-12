@@ -52,7 +52,7 @@
   ul.items { list-style: none; }
   ul.items li { display: flex; align-items: baseline; gap: 2mm; padding: 1.15mm 0 1.15mm 3mm; }
   ul.items .name { flex: 0 1 auto; }
-  ul.items .name .ja { font-size: 11.5pt; line-height: 1.3; }
+  ul.items .name .ja { font-size: 12.5pt; line-height: 1.3; }
   ul.items .name .ja::before { content: "・"; margin-left: -3mm; }
   ul.items .name .en { display: block; font-family: "Cormorant Garamond", serif; font-style: italic;
     font-size: 11pt; color: var(--sub); line-height: 1.05; }
@@ -104,8 +104,8 @@
 
   /* drinks two-column */
   .cols { display: grid; grid-template-columns: 1fr 1fr; column-gap: 9mm; margin-top: 4mm; }
-  .cols .sec { margin-top: 3.5mm; }
-  .cols ul.items .name .ja { font-size: 11pt; }
+  .cols .sec { margin-top: 2.5mm; }
+  .cols ul.items .name .ja { font-size: 12pt; }
   .cols ul.items .price, .cols .all { font-size: 11pt; }
   .cols ul.items .name .en { font-size: 10.5pt; }
 
@@ -132,24 +132,24 @@
 
   .s-list { list-style:none; }
   .s-list li { padding:.35mm 0; }
-  .s-list .ja { font-family:"Shippori Mincho B1", serif; font-weight:700; font-size:12pt; letter-spacing:.02em; line-height:1.3; }
-  .s-list .pr { font-family:"Noto Sans JP"; font-weight:400; font-size:10pt; color:var(--sub); margin-left:3mm; letter-spacing:.05em; }
-  .s-list .en { display:block; font-family:"Cormorant Garamond", serif; font-style:italic; font-size:10pt; color:#9a8d82; line-height:1.05; }
+  .s-list .ja { font-family:"Shippori Mincho B1", serif; font-weight:700; font-size:13pt; letter-spacing:.02em; line-height:1.3; }
+  .s-list .pr { font-family:"Noto Sans JP"; font-weight:400; font-size:11pt; color:var(--sub); margin-left:3mm; letter-spacing:.05em; }
+  .s-list .en { display:block; font-family:"Cormorant Garamond", serif; font-style:italic; font-size:11pt; color:#9a8d82; line-height:1.05; }
   .s-list li.rec { background:#fbf1e7; border-left:3px solid #d9883e; padding:1.2mm 3mm; margin:.8mm 0 .8mm -3mm; border-radius:0 2mm 2mm 0; }
-  .s-list li.rec .ja { font-size:14pt; color:#5a3a22; font-weight:800; }
-  .s-list li.rec .pr { font-size:11pt; color:#5a3a22; font-weight:500; }
+  .s-list li.rec .ja { font-size:15pt; color:#5a3a22; font-weight:800; }
+  .s-list li.rec .pr { font-size:12pt; color:#5a3a22; font-weight:500; }
   .badge { white-space:nowrap; flex:none; display:inline-block; font-family:"Noto Sans JP"; font-weight:700; font-size:7.5pt; color:#fff; background:#d9883e;
     border-radius:10mm; padding:.3mm 2.2mm; margin-right:2mm; vertical-align:3px; letter-spacing:.08em; }
   .badge.chef { background:#5a3a22; }
 
-  .p1 .sec { margin-top:3.5mm; } .p1 .sec > .head { margin-bottom:1.5mm; } .p1 .sec h2 { font-size:16pt; }
+  .p1 .sec { margin-top:3mm; } .p2 .sec { margin-top:9mm; } .p1 .sec > .head { margin-bottom:1.5mm; } .p1 .sec h2 { font-size:16pt; }
   /* all pages: mincho names, quiet prices, no leaders */
   ul.items .name .ja, ol.lunch .ja { font-family:"Shippori Mincho B1", serif; font-weight:700; }
   ul.items .name .ja::before { content:none; }
   ul.items li { padding-left:0; }
   ul.items.compact li, ul.items.plain li { padding-left:0; }
   ul.items .dots, ol.lunch .dots { display:none; }
-  ul.items .price { font-size:10pt; font-weight:400; color:var(--sub); margin-left:3mm; white-space:nowrap; }
+  ul.items .price { font-size:11pt; font-weight:400; color:var(--sub); margin-left:3mm; white-space:nowrap; }
   ol.lunch .price { font-size:11.5pt; font-weight:400; color:var(--sub); margin-left:2mm; letter-spacing:.04em; }
   ol.lunch .ja { letter-spacing:.06em; }
   ul.items .name .en { color:#9a8d82; }
@@ -180,69 +180,52 @@
   <div class="daily" style="top:44mm">※別紙に日替わりメニューもございます<i>Daily specials are on a separate sheet</i></div>
 
   <div class="sec" style="margin-top:7mm; position:relative; padding-left:48mm;">
-    <img class="photo" src="ham.png" style="left:0; top:24mm; width:40mm; height:40mm;" alt="">
-    <div class="head"><h2>À la carte</h2></div>
-    <ul class="s-list"><li class="rec"><span class="badge">おすすめ</span><span class="ja">インカの目覚めポテトフライ</span><span class="pr">680</span><span class="en">“Inca no Mezame” Golden Potato Fries</span></li><li class="rec"><span class="badge">おすすめ</span><span class="ja">+MINA COCOサラダ</span><span class="pr">880</span><span class="en">+MINA COCO Salad</span></li><li><span class="ja">季節のフルーツとスペイン産生ハム</span><span class="pr">980</span><span class="en">Seasonal Fruit with Spanish Cured Ham</span></li><li><span class="ja">王様トマトカルパッチョ</span><span class="pr">480</span><span class="en">“King Tomato” Carpaccio</span></li><li><span class="ja">クリームチーズとたいわたの酒盗ディップ</span><span class="pr">580</span><span class="en">Cream Cheese Dip with Salted Sea Bream Innards</span></li><li><span class="ja">本日のアヒージョ〜バゲット付〜</span><span class="pr">980</span><span class="en">Today’s Ajillo, served with Baguette</span></li><li><span class="ja">ナスのミートグラタン</span><span class="pr">780</span><span class="en">Eggplant &amp; Meat Sauce Gratin</span></li><li><span class="ja">ポテトフライ</span><span class="pr">440</span><span class="en">French Fries</span></li><li><span class="ja">ガーリックトースト</span><span class="pr">450</span><span class="en">Garlic Toast</span></li></ul>
-  </div>
-  <div class="sec" style="position:relative; padding-left:48mm; min-height:39mm;">
-    <div class="box" style="left:0; top:-1mm; width:42mm; padding:1.8mm 1.5mm;">
-      <b style="font-size:10pt; white-space:normal;">ディナーメニュー<br>テイクアウト<br>できます！！</b>
-      <div class="en" style="font-size:9.5pt;">Dinner menu available<br>for takeout!</div>
-      <p style="white-space:normal; font-size:7.5pt; line-height:1.45;">※お時間をいただく場合が<br>ございますので<br>お早めにご注文ください</p>
-      <div class="en" style="font-size:8.5pt;">Please order early.</div>
+    <img class="photo" src="ham.png" style="left:0; top:26mm; width:40mm; height:40mm;" alt="">
+    <div class="box" style="left:0; top:80mm; width:42mm; padding:1.8mm 1.5mm;">
+      <b style="font-size:10.5pt; white-space:normal;">ディナーメニュー<br>テイクアウト<br>できます！！</b>
+      <div class="en" style="font-size:10pt;">Dinner menu available<br>for takeout!</div>
+      <p style="white-space:normal; font-size:8pt; line-height:1.45;">※お時間をいただく場合が<br>ございますので<br>お早めにご注文ください</p>
+      <div class="en" style="font-size:9pt;">Please order early.</div>
     </div>
-    <div class="head"><h2>Fish</h2></div>
-    <ul class="s-list"><li class="rec"><span class="badge">おすすめ</span><span class="ja">エビのフリット ハニーマスタードソース</span><span class="pr">780</span><span class="en">Shrimp Fritters with Honey Mustard Sauce</span></li><li><span class="ja">本日のカルパッチョ</span><span class="pr">880</span><span class="en">Today’s Carpaccio</span></li></ul>
+    <div class="head"><h2>À la carte</h2></div>
+    <ul class="s-list"><li class="rec"><span class="badge">おすすめ</span><span class="ja">インカの目覚めポテトフライ</span><span class="pr">680</span><span class="en">“Inca no Mezame” Golden Potato Fries</span></li><li class="rec"><span class="badge">おすすめ</span><span class="ja">+MINA COCOサラダ</span><span class="pr">880</span><span class="en">+MINA COCO Salad</span></li><li><span class="ja">季節のフルーツとスペイン産生ハム</span><span class="pr">1,080</span><span class="en">Seasonal Fruit with Spanish Cured Ham</span></li><li><span class="ja">王様トマトカルパッチョ</span><span class="pr">480</span><span class="en">“King Tomato” Carpaccio</span></li><li><span class="ja">クリームチーズとたいわたの酒盗ディップ</span><span class="pr">580</span><span class="en">Cream Cheese Dip with Salted Sea Bream Innards</span></li><li><span class="ja">本日のアヒージョ〜バゲット付〜</span><span class="pr">1,080</span><span class="en">Today’s Ajillo, served with Baguette</span></li><li><span class="ja">季節野菜のグリル〜バーニャカウダーソース〜</span><span class="pr">980</span><span class="en">Grilled Seasonal Vegetables with Bagna Cauda Sauce</span></li><li><span class="ja">ナスのミートグラタン</span><span class="pr">780</span><span class="en">Eggplant &amp; Meat Sauce Gratin</span></li><li><span class="ja">とろとろチーズオムレツ</span><span class="pr">780</span><span class="en">Melty Cheese Omelette</span></li><li><span class="ja">ポテトフライ</span><span class="pr">450</span><span class="en">French Fries</span></li><li><span class="ja">ガーリックトースト</span><span class="pr">450</span><span class="en">Garlic Toast</span></li></ul>
   </div>
   <div class="sec" style="position:relative; padding-left:48mm;">
     <img class="photo" src="steak.png" style="left:0; top:22mm; width:40mm; height:40mm;" alt="">
     <div class="head"><h2>Meat</h2></div>
-    <ul class="s-list"><li class="rec"><span class="badge chef">シェフおすすめ</span><span class="ja">和牛ステーキ〜ジャポネソース〜</span><span class="pr">2,880</span><span class="en">Wagyu Steak with Japonaise Sauce</span></li><li><span class="ja">和牛のタリアータ〜バルサミコソース〜</span><span class="pr">2,880</span><span class="en">Wagyu Tagliata with Balsamic Sauce</span></li><li><span class="ja">りんどうポークロースのローズマリーロースト</span><span class="pr">980</span><span class="en">Rindo Pork Loin Roasted with Rosemary</span></li><li><span class="ja">りんどうポークヒレのマスタードパン粉焼き</span><span class="pr">980</span><span class="en">Rindo Pork Fillet with Mustard Breadcrumb Crust</span></li><li><span class="ja">若鶏モモの小悪魔風</span><span class="pr">880</span><span class="en">Chicken Thigh “Diavola” Style</span></li><li><span class="ja">白ワイン仕込みのチーズ唐揚げ</span><span class="pr">650</span><span class="en">White Wine–Marinated Cheese Fried Chicken</span></li><li><span class="ja">カリカリ豚足</span><span class="pr">550</span><span class="en">Crispy Pig’s Feet</span></li></ul>
+    <ul class="s-list"><li class="rec"><span class="badge chef">シェフおすすめ</span><span class="ja">和牛ステーキ〜ジャポネソース〜</span><span class="pr">2,880</span><span class="en">Wagyu Steak with Japonaise Sauce</span></li><li><span class="ja">和牛のタリアータ〜バルサミコソース〜</span><span class="pr">2,880</span><span class="en">Wagyu Tagliata with Balsamic Sauce</span></li><li><span class="ja">氷温熟成阿蘇美豚の蒸し焼き〜季節のソース〜</span><span class="pr">1,480</span><span class="en">Braised Ice-Aged “Aso Bibuta” Pork with Seasonal Sauce</span></li><li><span class="ja">馬刺しカルビのカルパッチョ</span><span class="pr">1,180</span><span class="en">Raw Horse Rib (Basashi) Carpaccio</span></li><li><span class="ja">和牛タタキ 彩り仕立て</span><span class="pr">1,080</span><span class="en">Lightly Seared Wagyu Tataki, Colorfully Plated</span></li><li><span class="ja">若鶏モモの小悪魔風</span><span class="pr">980</span><span class="en">Chicken Thigh “Diavola” Style</span></li><li><span class="ja">白ワイン仕込みのチーズ唐揚げ</span><span class="pr">780</span><span class="en">White Wine–Marinated Cheese Fried Chicken</span></li><li><span class="ja">カリカリ豚足</span><span class="pr">600</span><span class="en">Crispy Pig’s Feet</span></li></ul>
   </div>
 </section>
 
 <!-- ============ 2. DINNER (pizza / pasta / rice) ============ -->
-<section class="page">
+<section class="page p1 p2">
   <div class="title">DINNER MENU</div>
   <div class="bar"></div>
   <div class="hours">17:00〜23:00（L.O. 22:00）<small>Last order 22:00</small></div>
 
-  <img class="photo" src="pizza.png" style="left:15mm; top:70mm; width:40mm; height:40mm;" alt="">
-  <img class="photo" src="pasta.png" style="left:15mm; top:146mm; width:40mm; height:40mm;" alt="">
-
-  <div class="sec" style="margin-top:16mm; padding-left:66mm">
+  <div class="sec" style="position:relative; padding-left:48mm; min-height:42mm;">
+    <div class="box" style="left:0; top:0; width:42mm; padding:1.8mm 1.5mm;">
+      <b style="font-size:10.5pt; white-space:normal;">ディナーメニュー<br>テイクアウト<br>できます！！</b>
+      <div class="en" style="font-size:10pt;">Dinner menu available<br>for takeout!</div>
+      <p style="white-space:normal; font-size:8pt; line-height:1.45;">※お時間をいただく場合が<br>ございますので<br>お早めにご注文ください</p>
+      <div class="en" style="font-size:9pt;">Please order early.</div>
+    </div>
+    <div class="head"><h2>Fish</h2></div>
+    <ul class="s-list"><li class="rec"><span class="badge">おすすめ</span><span class="ja">エビのフリット ハニーマスタードソース</span><span class="pr">780</span><span class="en">Shrimp Fritters with Honey Mustard Sauce</span></li><li><span class="ja">本日のカルパッチョ</span><span class="pr">980</span><span class="en">Today’s Carpaccio</span></li></ul>
+  </div>
+  <div class="sec" style="position:relative; padding-left:48mm; min-height:42mm;">
+    <img class="photo" src="pizza.png" style="left:0; top:4mm; width:40mm; height:40mm;" alt="">
     <div class="head"><h2>Pizza</h2><div class="h-sub" style="margin:1.5mm 0 0">〜カリッとクリスピーピザ〜<i>Crispy thin crust</i></div></div>
-    <ul class="items">
-      <li class="rec"><span class="badge">おすすめ</span><span class="name"><span class="ja">4種のチーズピザ〜ハチミツ付〜</span><span class="price">1,380</span><span class="en">Four-Cheese Pizza, served with Honey</span></span></li>
-      <li><span class="name"><span class="ja">マルゲリータ</span><span class="price">1,180</span><span class="en">Margherita</span></span></li>
-      <li><span class="name"><span class="ja">アンチョビと王様トマトのピザ</span><span class="price">1,180</span><span class="en">Anchovy &amp; “King Tomato” Pizza</span></span></li>
-    </ul>
+    <ul class="s-list"><li class="rec"><span class="badge">おすすめ</span><span class="ja">4種のチーズピザ〜ハチミツ付〜</span><span class="pr">1,480</span><span class="en">Four-Cheese Pizza, served with Honey</span></li><li><span class="ja">マルゲリータ</span><span class="pr">1,180</span><span class="en">Margherita</span></li><li><span class="ja">アンチョビと王様トマトのピザ</span><span class="pr">1,180</span><span class="en">Anchovy &amp; “King Tomato” Pizza</span></li></ul>
   </div>
-
-  <div class="sec" style="margin-top:14mm; padding-left:66mm">
+  <div class="sec" style="position:relative; padding-left:48mm; min-height:42mm;">
+    <img class="photo" src="pasta.png" style="left:0; top:4mm; width:40mm; height:40mm;" alt="">
     <div class="head"><h2>Pasta</h2><div class="h-sub" style="margin:1.5mm 0 0">〜シェフの腕がうなる自慢の一品〜<i>The chef’s signature</i></div></div>
-    <ul class="items">
-      <li class="rec"><span class="badge">おすすめ</span><span class="name"><span class="ja">揚げナスのミートパスタ</span><span class="price">1,180</span><span class="en">Fried Eggplant &amp; Meat Sauce Pasta</span></span></li>
-      <li><span class="name"><span class="ja">アラビアータ <span style="font-family:'Noto Color Emoji'">🌶🌶</span></span><span class="price">980</span><span class="en">Arrabbiata (spicy)</span></span></li>
-      <li><span class="name"><span class="ja">カルボナーラ</span><span class="price">1,280</span><span class="en">Carbonara</span></span></li>
-      <li><span class="name"><span class="ja">生ハムとベビーリーフ塩パスタ</span><span class="price">1,180</span><span class="en">Cured Ham &amp; Baby Leaf Pasta, Lightly Salted</span></span></li>
-    </ul>
+    <ul class="s-list"><li class="rec"><span class="badge">おすすめ</span><span class="ja">揚げナスのミートパスタ</span><span class="pr">1,180</span><span class="en">Fried Eggplant &amp; Meat Sauce Pasta</span></li><li><span class="ja">アラビアータ <span style="font-family:'Noto Color Emoji'">🌶🌶</span></span><span class="pr">1,080</span><span class="en">Arrabbiata (spicy)</span></li><li><span class="ja">カルボナーラ</span><span class="pr">1,280</span><span class="en">Carbonara</span></li><li><span class="ja">生ハムとベビーリーフ塩パスタ</span><span class="pr">1,280</span><span class="en">Cured Ham &amp; Baby Leaf Pasta, Lightly Salted</span></li></ul>
   </div>
-
-  <div class="box" style="left:15mm; top:212mm; width:42mm; padding:1.8mm 1.5mm;">
-    <b style="font-size:10pt; white-space:normal;">ディナーメニュー<br>テイクアウト<br>できます！！</b>
-    <div class="en" style="font-size:9.5pt;">Dinner menu available<br>for takeout!</div>
-    <p style="white-space:normal; font-size:7.5pt; line-height:1.45;">※お時間をいただく場合が<br>ございますので<br>お早めにご注文ください</p>
-    <div class="en" style="font-size:8.5pt;">Please order early.</div>
-  </div>
-
-  <div class="sec" style="margin-top:14mm; padding-left:66mm">
+  <div class="sec" style="position:relative; padding-left:48mm; min-height:42mm;">
     <div class="head"><h2>Rice</h2></div>
-    <ul class="items">
-      <li class="rec"><span class="badge chef">シェフおすすめ</span><span class="name"><span class="ja">和牛でビーフピラフ</span><span class="price">1,480</span><span class="en">Wagyu Beef Pilaf</span></span></li>
-      <li><span class="name"><span class="ja">キーマカレーチーズ焼き</span><span class="price">880</span><span class="en">Baked Keema Curry with Cheese</span></span></li>
-      <li><span class="name"><span class="ja">オムライス〜トマトクリームソース〜</span><span class="price">1,280</span><span class="en">Omurice with Tomato Cream Sauce</span></span></li>
-    </ul>
+    <ul class="s-list"><li class="rec"><span class="badge chef">シェフおすすめ</span><span class="ja">和牛でビーフピラフ</span><span class="pr">1,480</span><span class="en">Wagyu Beef Pilaf</span></li><li><span class="ja">キーマカレーチーズ焼き</span><span class="pr">1,080</span><span class="en">Baked Keema Curry with Cheese</span></li><li><span class="ja">オムライス〜トマトクリームソース〜</span><span class="pr">1,280</span><span class="en">Omurice with Tomato Cream Sauce</span></li></ul>
   </div>
 </section>
 
@@ -349,13 +332,13 @@
     <div>
       <div class="sec">
         <div class="head"><h2>Cocktail</h2></div>
-        <ul class="items plain" style="display:grid; grid-template-columns:1fr 1fr;">
+        <ul class="items plain" style="display:grid; grid-template-columns:1fr 1fr 1fr;">
           <li><span class="name"><span class="ja">ジン</span><span class="en">Gin</span></span></li>
           <li><span class="name"><span class="ja">ウォッカ</span><span class="en">Vodka</span></span></li>
           <li><span class="name"><span class="ja">カンパリ</span><span class="en">Campari</span></span></li>
           <li><span class="name"><span class="ja">カシス</span><span class="en">Cassis</span></span></li>
           <li><span class="name"><span class="ja">ベイリーズ</span><span class="en">Baileys</span></span></li>
-          <li><span class="name"><span class="ja">プルシア</span><span class="en">Prucia (plum liqueur)</span></span></li>
+          <li><span class="name"><span class="ja">プルシア</span><span class="en">Prucia</span></span></li>
           <li><span class="name"><span class="ja">ワイン</span><span class="en">Wine</span></span></li>
         </ul>
         <div class="all">all ¥700</div>
@@ -368,7 +351,7 @@
         <div class="head"><h2>Non alcohol</h2></div>
         <ul class="items compact">
           <li><span class="name"><span class="ja">コロナ</span><span class="price">400</span><span class="en">Corona (non-alcoholic)</span></span></li>
-          <li><span class="name"><span class="ja">マヌカハニースパークリング（750ml）</span><span class="price">3,000</span><span class="en">Manuka Honey Sparkling (750 ml bottle)</span></span></li>
+          <li><span class="name"><span class="ja" style="white-space:nowrap; letter-spacing:0; font-size:11pt">マヌカハニースパークリング（750ml）</span><span class="price">3,000</span><span class="en">Manuka Honey Sparkling (750 ml bottle)</span></span></li>
         </ul>
         <ul class="items plain" style="margin-top:1.5mm">
           <li><span class="name"><span class="ja">カシス</span><span class="en">Cassis</span></span></li>
@@ -379,14 +362,19 @@
       </div>
       <div class="sec">
         <div class="head"><h2>Soft drink</h2></div>
-        <ul class="items plain" style="display:grid; grid-template-columns:1fr 1fr;">
+        <ul class="items plain">
+          <li><span class="name"><span class="ja">クランベリージュース</span><span class="en">Cranberry Juice</span></span></li>
+          <li><span class="name"><span class="ja">マンゴージュース</span><span class="en">Mango Juice</span></span></li>
+          <li><span class="name"><span class="ja">アップルジュース</span><span class="en">Apple Juice</span></span></li>
+        </ul>
+        <div class="all">all ¥500</div>
+        <ul class="items plain" style="display:grid; grid-template-columns:1fr 1fr; margin-top:1mm;">
           <li><span class="name"><span class="ja">コーラ</span><span class="en">Cola</span></span></li>
           <li><span class="name"><span class="ja">ジンジャーエール</span><span class="en">Ginger Ale</span></span></li>
           <li><span class="name"><span class="ja">トニックウォーター</span><span class="en">Tonic Water</span></span></li>
-          <li><span class="name"><span class="ja">アップル</span><span class="en">Apple Juice</span></span></li>
           <li><span class="name"><span class="ja">ウーロン茶</span><span class="en">Oolong Tea</span></span></li>
           <li><span class="name"><span class="ja">コーヒー（Hot/Ice）</span><span class="en">Coffee (Hot / Iced)</span></span></li>
-          <li><span class="name"><span class="ja">紅茶（Hot/Ice）</span><span class="en">Tea (Hot / Iced)</span></span></li>
+          <li><span class="name"><span class="ja">紅茶（Ice）</span><span class="en">Iced Tea</span></span></li>
         </ul>
         <div class="all">all ¥400</div>
       </div>
