@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#fbf6f4; --blob:#f3e6e6; --ink:#3a2f30; --accent:#8f5a66; --muted:#7b6a6c; --chip:#f1e3e3; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { width:1080px; height:var(--h); background:var(--bg); font-family:"M PLUS Rounded 1c",sans-serif; color:var(--ink); position:relative; overflow:hidden; }
+  .blob { position:absolute; border-radius:50%; background:var(--blob); }
+  .b1 { width:560px; height:560px; right:-170px; top:-240px; }
+  .b2 { width:420px; height:420px; left:-200px; bottom:-170px; }
+  .wrap { position:relative; height:100%; display:flex; flex-direction:column; align-items:center; padding:var(--pad) 60px 0; }
+  .eyebrow { letter-spacing:.42em; font-weight:700; color:var(--accent); font-size:30px; }
+  h1 { font-weight:800; font-size:var(--title); margin-top:14px; letter-spacing:.02em; }
+  .en { font-family:"Cormorant Garamond",serif; font-size:38px; color:var(--muted); letter-spacing:.06em; margin-top:2px; }
+  .lead { font-weight:800; font-size:38px; margin-top:16px; }
+  .lead em { font-style:normal; color:var(--accent); }
+  .card { width:100%; background:#fff; border-radius:34px; padding:18px; margin-top:var(--gap); display:flex; flex-direction:column; gap:14px; box-shadow:0 4px 18px rgba(143,90,102,.06); }
+  .shot { position:relative; height:var(--shot); border-radius:22px; overflow:hidden; background:#efe7e6; }
+  .shot img { width:100%; height:100%; object-fit:cover; display:block; }
+  .ph { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; color:#b39ca0; font-size:32px; font-weight:700; border:4px dashed #dcc7ca; border-radius:22px; }
+  .ph small { font-size:22px; font-weight:500; }
+  .tag { position:absolute; left:18px; top:18px; padding:8px 22px; border-radius:999px; font-weight:800; font-size:28px; letter-spacing:.18em; }
+  .before .tag { background:rgba(255,255,255,.92); color:var(--muted); }
+  .after .tag { background:var(--accent); color:#fff; }
+  .arrow { text-align:center; color:var(--accent); font-size:30px; line-height:1; margin:-4px 0; }
+  .chips { display:flex; gap:18px; margin-top:var(--gap); flex-wrap:wrap; justify-content:center; }
+  .chip { background:var(--chip); color:var(--accent); font-weight:800; font-size:30px; padding:14px 30px; border-radius:999px; }
+  .cta { margin-top:var(--gap); background:var(--accent); color:#fff; font-weight:800; font-size:38px; padding:24px 60px; border-radius:999px; letter-spacing:.04em; }
+  .foot { margin-top:22px; font-size:26px; color:var(--muted); font-weight:700; }
+  .foot b { color:var(--accent); }
+  .note { margin-top:10px; font-size:20px; color:#a8979a; }
+</style>
+</head>
+<body>
+<div class="blob b1"></div><div class="blob b2"></div>
+<div class="wrap">
+  <div class="eyebrow">CUSTOMER BEFORE / AFTER</div>
+  <h1>パリジェンヌラッシュリフト</h1>
+  <div class="en">Parisienne lash lift</div>
+  <div class="lead">自まつげを<em>根元から</em>立ち上げて、ぱっちり目もとに</div>
+  <div class="card">
+    <div class="shot before"><span class="tag">BEFORE</span></div>
+    <div class="arrow">▼</div>
+    <div class="shot after"><span class="tag">AFTER</span></div>
+  </div>
+  <div class="chips"><span class="chip">ビューラーいらず</span><span class="chip">自まつげで自然に</span><span class="chip">メイク時短</span></div>
+  <div class="cta">ご予約はプロフィールのリンクから</div>
+  <div class="foot"><b>＋Smile. プリュスマイル</b>　熊本市東区尾ノ上｜@smile_0215_</div>
+  <div class="note">※実際のお客様の写真です（掲載許可をいただいています）。仕上がりには個人差があります。</div>
+</div>
+<script>
+  const q = new URLSearchParams(location.search);
+  const story = q.get('format') === 'story';
+  const s = document.body.style;
+  s.setProperty('--h', story ? '1920px' : '1350px');
+  s.setProperty('--pad', story ? '220px' : '54px');
+  s.setProperty('--title', story ? '68px' : '64px');
+  s.setProperty('--shot', story ? '390px' : '290px');
+  s.setProperty('--gap', story ? '40px' : '24px');
+  for (const k of ['before', 'after']) {
+    const box = document.querySelector('.shot.' + k);
+    const src = q.get(k);
+    if (src) { const img = new Image(); img.src = src; img.style.objectPosition = q.get(k + 'Pos') || 'center'; box.prepend(img); }
+    else box.insertAdjacentHTML('afterbegin', `<div class="ph">${k === 'before' ? 'ビフォー' : 'アフター'}写真<small>写真/${k}.jpg を入れて再生成</small></div>`);
+  }
+</script>
+</body>
+</html>
